@@ -6,14 +6,18 @@ class MyText extends StatelessWidget {
   final String text;
   final TextStyle style;
 
-  MyText.bold(this.text, {super.key}) : style = boldStyle;
+  const MyText.bold(this.text, {super.key}) : style = boldStyle;
 
-  MyText.semiBold(this.text, {super.key}) : style = semiBoldStyle;
+  const MyText.semiBold(this.text, {super.key}) : style = semiBoldStyle;
 
-  MyText.caption(this.text, {super.key}) : style = captionStyle;
+  MyText.caption(this.text, {super.key, Color color = secondaryDark})
+      : style = captionStyle.copyWith(color: color);
 
-  MyText.regular(this.text, {super.key, Color color = secondaryDark})
-      : style = regularStyle.copyWith(color: color);
+  MyText.regular(this.text,
+      {super.key,
+      Color color = secondaryDark,
+      FontWeight fontWeight = FontWeight.normal})
+      : style = regularStyle.copyWith(color: color, fontWeight: fontWeight);
 
   @override
   Widget build(BuildContext context) {

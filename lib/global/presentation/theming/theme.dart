@@ -8,6 +8,7 @@ ThemeData lightTheme = ThemeData(
       surface: bgLight,
       primary: primary,
       secondary: secondary,
+      shadow: shadowLight,
     ));
 
 ThemeData darkTheme = ThemeData(
@@ -16,4 +17,5 @@ ThemeData darkTheme = ThemeData(
       surface: bgDark,
       primary: primary,
       secondary: secondary,
+      shadow: shadowDark,
     ));

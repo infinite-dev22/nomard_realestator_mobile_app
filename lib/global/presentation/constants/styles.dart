@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-TextStyle boldStyle = GoogleFonts.roboto(
+const TextStyle boldStyle = TextStyle(
   fontSize: 20,
   fontWeight: FontWeight.w600,
 );
-TextStyle semiBoldStyle = GoogleFonts.roboto(
+const TextStyle semiBoldStyle = TextStyle(
   fontSize: 18,
   fontWeight: FontWeight.w400,
 );
-TextStyle regularStyle = GoogleFonts.roboto(
-  fontSize: 16,
+const TextStyle regularStyle = TextStyle(
+  fontSize: 14,
   fontWeight: FontWeight.w400,
 );
-TextStyle captionStyle = GoogleFonts.roboto(
+const TextStyle captionStyle = TextStyle(
   fontSize: 12,
   fontWeight: FontWeight.w400,
 );
