@@ -18,7 +18,7 @@ class MyIconButton extends StatelessWidget {
     this.disabled = false,
     this.busy = false,
     this.outlined = false,
-    this.size,
+    this.size = 50,
     this.radius,
     required this.onTap,
   });
