@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/app_colors.dart';
+import '../../../../../../global/presentation/constants/app_colors.dart';
 
 class MyTextArea extends StatelessWidget {
   final String? hint;
