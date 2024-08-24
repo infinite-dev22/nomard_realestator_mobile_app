@@ -24,6 +24,7 @@ class MyText extends StatelessWidget {
     return Text(
       text,
       style: style,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }
