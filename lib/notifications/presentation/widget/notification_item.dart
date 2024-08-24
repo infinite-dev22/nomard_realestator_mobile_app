@@ -3,7 +3,7 @@ import 'package:real_estate_property/global/presentation/constants/app_colors.da
 import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
 import 'package:real_estate_property/notifications/data/model/notification_model.dart';
 
-import 'my_round_icon.dart';
+import '../../../global/presentation/widget/icon_holders/my_round_icon.dart';
 
 class NotificationItem extends StatelessWidget {
   final IconData icon;
@@ -37,7 +37,7 @@ class NotificationItem extends StatelessWidget {
       ),
       child: Row(
         children: [
-          MyRoundIcon(
+          MyRoundIcon.medium(
             icon: icon,
             backgroundColor: backgroundColor,
             iconColor: Colors.white,
