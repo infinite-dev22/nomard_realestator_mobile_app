@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 const TextStyle boldStyle = TextStyle(
-  fontSize: 20,
-  fontWeight: FontWeight.w600,
+  fontSize: 16,
+  fontWeight: FontWeight.bold,
 );
 const TextStyle semiBoldStyle = TextStyle(
-  fontSize: 18,
-  fontWeight: FontWeight.w400,
+  fontSize: 14,
+  fontWeight: FontWeight.w500,
 );
 const TextStyle regularStyle = TextStyle(
   fontSize: 14,
