@@ -6,9 +6,9 @@ class MyText extends StatelessWidget {
   final String text;
   final TextStyle style;
 
-  const MyText.bold(this.text, {super.key}) : style = boldStyle;
+  MyText.bold(this.text, {super.key, Color color = secondaryDark}) : style = boldStyle.copyWith(color: color);
 
-  const MyText.semiBold(this.text, {super.key}) : style = semiBoldStyle;
+  MyText.semiBold(this.text, {super.key, Color color = secondaryDark}) : style = semiBoldStyle.copyWith(color: color);
 
   MyText.caption(this.text, {super.key, Color color = secondaryDark})
       : style = captionStyle.copyWith(color: color);
