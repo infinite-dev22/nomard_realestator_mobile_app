@@ -44,6 +44,7 @@ class ChatItem extends StatelessWidget {
                       child: MyText.caption(
                         chatItem.messagePreview,
                         color: secondary,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),MyText.caption(chatItem.time, color: secondary,),
                   ],
