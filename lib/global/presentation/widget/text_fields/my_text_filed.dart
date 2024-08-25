@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 
 class MyTextFiled extends StatelessWidget {
@@ -6,6 +7,7 @@ class MyTextFiled extends StatelessWidget {
   final String? purpose;
   final TextEditingController? controller;
   final bool disabled;
+  final bool obsecure;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
 
@@ -17,7 +19,17 @@ class MyTextFiled extends StatelessWidget {
     this.disabled = false,
     this.suffixIcon,
     this.prefixIcon,
-  });
+  }) : obsecure = false;
+
+  const MyTextFiled.obsecure({
+    super.key,
+    this.hint,
+    this.purpose,
+    this.controller,
+    this.disabled = false,
+    this.prefixIcon,
+  })  : obsecure = true,
+        suffixIcon = null;
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +42,9 @@ class MyTextFiled extends StatelessWidget {
       child: TextFormField(
         enabled: !disabled,
         controller: controller,
+        obscureText: obsecure,
         decoration: InputDecoration(
-          suffixIcon: suffixIcon,
+          suffixIcon: suffixIcon ?? _buildViewIcon(),
           prefixIcon: prefixIcon,
           prefixIconConstraints: BoxConstraints.tight(
             const Size(30, 30),
@@ -87,5 +100,14 @@ class MyTextFiled extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _buildViewIcon() {
+    bool showContent = false;
+    return IconButton(
+        onPressed: () => showContent = !showContent,
+        icon: (showContent == true)
+            ? const Icon(MingCute.eye_line)
+            : const Icon(MingCute.eye_close_line));
   }
 }
