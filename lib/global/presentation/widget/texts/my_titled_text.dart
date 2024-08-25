@@ -5,8 +5,14 @@ import 'package:real_estate_property/global/presentation/widget/texts/my_text.da
 class MyTitledText extends StatelessWidget {
   final String title;
   final String text;
+  final Color color;
 
-  const MyTitledText(this.title, this.text, {super.key});
+  const MyTitledText(
+    this.title,
+    this.text, {
+    super.key,
+    this.color = secondaryDark,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +25,7 @@ class MyTitledText extends StatelessWidget {
         ),
         MyText.bold(
           text,
-          color: secondaryDark,
+          color: color,
         ),
       ],
     );
