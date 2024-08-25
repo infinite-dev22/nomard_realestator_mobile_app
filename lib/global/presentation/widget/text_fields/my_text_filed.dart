@@ -33,7 +33,9 @@ class MyTextFiled extends StatelessWidget {
         decoration: InputDecoration(
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon,
-          prefixIconConstraints: BoxConstraints.tight(Size(30, 30)),
+          prefixIconConstraints: BoxConstraints.tight(
+            const Size(30, 30),
+          ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: const BorderSide(
