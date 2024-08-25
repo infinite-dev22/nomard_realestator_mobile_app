@@ -14,41 +14,42 @@ class ChatItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              UserProfileImage(chatItem.image),
-              const SizedBox(width: 20),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  MyText.bold(chatItem.name),
-                  const SizedBox(width: 10),
-                  SizedBox(
-                    width: constraints.maxWidth - 170,
-                    child: MyText.caption(
-                      chatItem.messagePreview,
-                      color: secondary,
+          UserProfileImage(chatItem.image),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    MyText.bold(chatItem.name),
+                    if(chatItem.messageCount! > 0)Badge(
+                      label: MyText.caption(
+                        chatItem.messageCount.toString(),
+                        color: Colors.white,
+                      ),
+                      backgroundColor: Theme.of(context).colorScheme.primary,
                     ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          Column(
-            children: [
-              Badge(
-                label: MyText.regular(
-                  chatItem.messageCount.toString(),
-                  color: Colors.white,
+                  ],
                 ),
-                backgroundColor: Theme.of(context).colorScheme.primary,
-              ),
-              const SizedBox(width: 10),
-              MyText.caption(chatItem.time, color: secondary,),
-            ],
+                const SizedBox(width: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: constraints.maxWidth - 100,
+                      child: MyText.caption(
+                        chatItem.messagePreview,
+                        color: secondary,
+                      ),
+                    ),MyText.caption(chatItem.time, color: secondary,),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       );

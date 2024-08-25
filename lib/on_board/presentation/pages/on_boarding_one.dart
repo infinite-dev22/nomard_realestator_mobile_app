@@ -43,6 +43,7 @@ class OnBoardingOne extends StatelessWidget {
     var facility = FacilityModel(Icons.shower_rounded, "4 Baths");
     var agent = AgentModel("assets/images/house_1.jpg", "Micheal Angelo", "Owner");
     var chat = ChatItemModel("assets/images/house_1.jpg", "Micheal Angelo", "Modal text goes here. Lorem ipsum dolor at areit connectouf adoptouy elif in portainer quayer.", "1:23", 5);
+    var chat1 = ChatItemModel("assets/images/house_1.jpg", "Micheal Angelo", "Modal text goes here. Lorem ipsum dolor at areit connectouf adoptouy elif in portainer quayer.", "1:23", 0);
     final widgetList = List<Widget>.of(
       [
         // MyText.h1("Heading 1"),
@@ -112,6 +113,7 @@ class OnBoardingOne extends StatelessWidget {
         // MyTile.navigator(text: "My Navigator Tile", onTap: () {},icon: Icons.person,),
         // AgentItem(agent),
         ChatItem(chat),
+        ChatItem(chat1),
       ],
     );
 
