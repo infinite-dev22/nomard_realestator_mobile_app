@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Real Estate Property',
       theme: lightTheme,
       darkTheme: darkTheme,
-      home: const OnBoardingOne(),
+      home: const OnBoarding(),
     );
   }
 }
