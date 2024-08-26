@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
+import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
 
 class MyAbstractButton extends StatelessWidget {
   final String text;
@@ -53,16 +54,13 @@ class MyAbstractButton extends StatelessWidget {
               ),
               strokeWidth: 4,
             )
-          : Text(
+          : MyText.regular(
               text,
-              style: TextStyle(
-                fontSize: 16,
-                color: outlined
-                    ? disabled
-                        ? secondary
-                        : Theme.of(context).colorScheme.primary
-                    : Colors.white,
-              ),
+              color: outlined
+                  ? disabled
+                      ? secondary
+                      : Theme.of(context).colorScheme.primary
+                  : Colors.white,
             ),
     );
   }
