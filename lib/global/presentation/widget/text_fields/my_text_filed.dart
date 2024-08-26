@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:icons_plus/icons_plus.dart';
-import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:real_estate_property/global/presentation/bloc/text_field/my_text_field_bloc.dart';
+import 'package:real_estate_property/global/presentation/widget/text_fields/my_abstract_text_filed.dart';
 
 class MyTextFiled extends StatelessWidget {
   final String? hint;
@@ -33,81 +34,24 @@ class MyTextFiled extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(4),
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surface,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: TextFormField(
-        enabled: !disabled,
-        controller: controller,
-        obscureText: obsecure,
-        decoration: InputDecoration(
-          suffixIcon: suffixIcon ?? _buildViewIcon(),
-          prefixIcon: prefixIcon,
-          prefixIconConstraints: BoxConstraints.tight(
-            const Size(30, 30),
-          ),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(
-              color: secondaryLightest,
+    return BlocProvider(
+      create: (context) => MyTextFieldBloc(),
+      child: (obsecure == true)
+          ? MyAbstractTextFiled.obsecure(
+              hint: hint,
+              purpose: purpose,
+              controller: controller,
+              disabled: disabled,
+              prefixIcon: prefixIcon,
+            )
+          : MyAbstractTextFiled(
+              hint: hint,
+              purpose: purpose,
+              controller: controller,
+              disabled: disabled,
+              suffixIcon: suffixIcon,
+              prefixIcon: prefixIcon,
             ),
-          ),
-          disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(
-              color: secondaryLightest,
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(
-              color: secondaryLightest,
-            ),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(
-              color: secondaryLightest,
-            ),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(
-              color: secondaryLightest,
-            ),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(
-              color: secondaryLightest,
-            ),
-          ),
-          hintText: hint,
-          hintStyle: const TextStyle(color: secondary),
-          contentPadding: const EdgeInsets.symmetric(
-            vertical: 8.0,
-            horizontal: 10.0,
-          ),
-          fillColor: secondaryLightest,
-          filled: true,
-          isDense: true,
-          counter: null,
-          counterText: "",
-          enabled: !disabled,
-        ),
-      ),
     );
-  }
-
-  Widget _buildViewIcon() {
-    bool showContent = false;
-    return IconButton(
-        onPressed: () => showContent = !showContent,
-        icon: (showContent == true)
-            ? const Icon(MingCute.eye_line)
-            : const Icon(MingCute.eye_close_line));
   }
 }

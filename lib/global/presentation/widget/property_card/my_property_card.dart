@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:real_estate_property/global/presentation/widget/property_card/property_card_details.dart';
 import 'package:real_estate_property/global/presentation/widget/property_card/property_card_image.dart';
 
 import '../../../data/model/property_model.dart';
+import '../../bloc/property_card/property_card_bloc.dart';
 
 class MyPropertyCard extends StatelessWidget {
   final PropertyModel propertyModel;
@@ -34,10 +36,13 @@ class MyPropertyCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          PropertyCardImage(
-            propertyModel.images[1],
-            width: double.infinity,
-            height: 150,
+          BlocProvider(
+            create: (context) => PropertyCardBloc(),
+            child: PropertyCardImage(
+              propertyModel.images[1],
+              width: double.infinity,
+              height: 150,
+            ),
           ),
           PropertyCardDetails(
             propertyModel,

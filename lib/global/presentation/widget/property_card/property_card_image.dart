@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../bloc/property_card/property_card_bloc.dart';
 
 class PropertyCardImage extends StatelessWidget {
   final String file;
@@ -26,43 +29,54 @@ class PropertyCardImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        GestureDetector(
-          onTap: onTap,
-          child: Container(
-            width: width,
-            height: height,
-            decoration: BoxDecoration(
-              color: bgColor,
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(8),
-                topRight: Radius.circular(8),
-              ),
-              image: DecorationImage(
-                image: AssetImage(file),
-                fit: imageFit,
-              ),
-            ),
-          ),
-        ),
-        Positioned(
-          top: 1,
-          right: 1,
-          child: IconButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                backgroundColor: WidgetStatePropertyAll(
-                  Theme.of(context).colorScheme.surface.withOpacity(.8),
+    return BlocConsumer<PropertyCardBloc, PropertyCardState>(
+      listener: (blocContext, state) {
+        // TODO: implement listener
+      },
+      builder: (blocContext, state) {
+        return Stack(
+          children: [
+            GestureDetector(
+              onTap: onTap,
+              child: Container(
+                width: width,
+                height: height,
+                decoration: BoxDecoration(
+                  color: bgColor,
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(8),
+                    topRight: Radius.circular(8),
+                  ),
+                  image: DecorationImage(
+                    image: AssetImage(file),
+                    fit: imageFit,
+                  ),
                 ),
               ),
-              icon: Icon(
-                Icons.favorite ?? Icons.favorite_border_outlined,
-                color: Colors.red ?? Theme.of(context).colorScheme.primary,
-                size: 24,
-              )),
-        ),
-      ],
+            ),
+            Positioned(
+              top: 1,
+              right: 1,
+              child: IconButton(
+                  onPressed: () => blocContext.read<PropertyCardBloc>().add(LikeEvent(!state.like)),
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(
+                      Theme.of(context).colorScheme.surface.withOpacity(.8),
+                    ),
+                  ),
+                  icon: Icon(
+                    (state.like == false)
+                        ? Icons.favorite
+                        : Icons.favorite_border_outlined,
+                    color: (state.like == false)
+                        ? Colors.red
+                        : Theme.of(context).colorScheme.primary,
+                    size: 24,
+                  )),
+            ),
+          ],
+        );
+      },
     );
   }
 }
