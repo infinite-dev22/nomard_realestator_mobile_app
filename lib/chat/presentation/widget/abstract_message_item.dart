@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:real_estate_property/chat/data/model/message_model.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
 
 import '../../../global/presentation/constants/app_colors.dart';
+import '../bloc/voice_note/voice_note_bloc.dart';
 
-class MessageItem extends StatelessWidget {
+class AbstractMessageItem extends StatelessWidget {
   final MessageModel message;
 
-  const MessageItem(this.message, {super.key});
+  const AbstractMessageItem(this.message, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,10 +52,25 @@ class MessageItem extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 10),
                       child: SizedBox(
                         height: 20,
-                        child: Slider(
-                          value: trackProgress,
-                          onChanged: (value) => trackProgress = value,
-                          thumbColor: Colors.white,
+                        child: BlocConsumer<VoiceNoteBloc, VoiceNoteState>(
+                          listener: (blocContext, state) {
+                            // TODO: implement listener
+                          },
+                          builder: (blocContext, state) {
+                            return Slider(
+                              value: state.seekValue,
+                              overlayColor: WidgetStatePropertyAll(
+                                  Theme.of(context)
+                                      .colorScheme
+                                      .secondary
+                                      .withOpacity(.3)),
+                              onChanged: (value) => blocContext
+                                  .read<VoiceNoteBloc>()
+                                  .add(SeekEvent(value)),
+                              thumbColor: Colors.white,
+                              activeColor: Colors.blueAccent,
+                            );
+                          },
                         ),
                       ),
                     ),
