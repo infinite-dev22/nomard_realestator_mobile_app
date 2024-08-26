@@ -8,6 +8,9 @@ class MyText extends StatelessWidget {
   final TextOverflow? overflow;
   final bool? softWrap;
 
+  MyText.h1(this.text, {super.key, Color color = secondaryDark, this.overflow, this.softWrap}) : style = h1Style.copyWith(color: color);
+  MyText.h2(this.text, {super.key, Color color = secondaryDark, this.overflow, this.softWrap}) : style = h2Style.copyWith(color: color);
+  MyText.h3(this.text, {super.key, Color color = secondaryDark, this.overflow, this.softWrap}) : style = h3Style.copyWith(color: color);
   MyText.bold(this.text, {super.key, Color color = secondaryDark, this.overflow, this.softWrap}) : style = boldStyle.copyWith(color: color);
 
   MyText.semiBold(this.text, {super.key, Color color = secondaryDark, this.overflow, this.softWrap}) : style = semiBoldStyle.copyWith(color: color);
