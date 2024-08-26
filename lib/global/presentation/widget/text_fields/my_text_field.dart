@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:real_estate_property/global/presentation/bloc/text_field/my_text_field_bloc.dart';
 import 'package:real_estate_property/global/presentation/widget/text_fields/my_abstract_text_filed.dart';
 
-class MyTextFiled extends StatelessWidget {
+class MyTextField extends StatelessWidget {
   final String? hint;
   final String? purpose;
   final TextEditingController? controller;
@@ -12,7 +12,7 @@ class MyTextFiled extends StatelessWidget {
   final Widget? suffixIcon;
   final Widget? prefixIcon;
 
-  const MyTextFiled({
+  const MyTextField({
     super.key,
     this.hint,
     this.purpose,
@@ -22,7 +22,7 @@ class MyTextFiled extends StatelessWidget {
     this.prefixIcon,
   }) : obsecure = false;
 
-  const MyTextFiled.obsecure({
+  const MyTextField.obsecure({
     super.key,
     this.hint,
     this.purpose,
