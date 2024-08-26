@@ -17,30 +17,4 @@ class MyTextFieldBloc extends Bloc<MyTextFieldEvent, MyTextFieldState> {
     emit(state.copyWith(
         status: MyTextFieldStatus.success, obsecure: event.obsecure));
   }
-
-  @override
-  void onEvent(MyTextFieldEvent event) {
-    log(event.toString());
-    super.onEvent(event);
-  }
-
-  @override
-  void onTransition(
-      Transition<MyTextFieldEvent, MyTextFieldState> transition) {
-    log(transition.toString());
-    super.onTransition(transition);
-  }
-
-  @override
-  void onChange(Change<MyTextFieldState> change) {
-    log(change.toString());
-    super.onChange(change);
-  }
-
-  @override
-  void onError(Object error, StackTrace stackTrace) {
-    log(error.toString());
-    log(stackTrace.toString());
-    super.onError(error, stackTrace);
-  }
 }
