@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
 
+const TextStyle h1Style = TextStyle(
+  fontSize: 22,
+  fontWeight: FontWeight.bold,
+);
+const TextStyle h2Style = TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.bold,
+);
+const TextStyle h3Style = TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.bold,
+);
 const TextStyle boldStyle = TextStyle(
-  fontSize: 16,
   fontWeight: FontWeight.bold,
 );
 const TextStyle semiBoldStyle = TextStyle(
-  fontSize: 14,
   fontWeight: FontWeight.w500,
 );
-const TextStyle regularStyle = TextStyle(
-  fontSize: 14,
-  fontWeight: FontWeight.w400,
-);
+const TextStyle regularStyle = TextStyle();
 const TextStyle captionStyle = TextStyle(
-  fontSize: 12,
+  fontSize: 11,
   fontWeight: FontWeight.w400,
 );
