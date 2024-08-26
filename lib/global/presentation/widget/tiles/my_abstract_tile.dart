@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
 
 class MyAbstractTile extends StatelessWidget {
@@ -30,44 +29,13 @@ class MyAbstractTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: (icon != null) ? Icon(icon) : null,
-      title: MyText.regular(text),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          MyText.regular(text),
+        ],
+      ),
       trailing: (rightIcon != null) ? Icon(rightIcon) : null,
     );
-    // return AnimatedContainer(
-    //   margin: const EdgeInsets.symmetric(horizontal: 8),
-    //   duration: const Duration(milliseconds: 350),
-    //   width: width,
-    //   height: 48,
-    //   padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 16),
-    //   decoration: BoxDecoration(
-    //     borderRadius: BorderRadius.circular(10),
-    //     color: isFlat
-    //         ? Colors.transparent
-    //         : disabled
-    //             ? secondary
-    //             : Theme.of(context).colorScheme.surface,
-    //     border: isFlat
-    //         ? Border.all(
-    //             color: disabled
-    //                 ? secondary
-    //                 : Theme.of(context).colorScheme.surface,
-    //             width: 1,
-    //           )
-    //         : null,
-    //   ),
-    //   child: Row(
-    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //     children: [
-    //       Row(
-    //         children: [
-    //           Icon(icon),
-    //           const SizedBox(width: 8),
-    //           MyText.regular(text),
-    //         ],
-    //       ),
-    //       Icon(OctIcons.chevron_right),
-    //     ],
-    //   ),
-    // );
   }
 }

@@ -38,6 +38,11 @@ class MyAbstractTextFiled extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<MyTextFieldBloc, MyTextFieldState>(
       builder: (blocContext, state) {
+        if (state.status.isInitial) {
+          blocContext
+              .read<MyTextFieldBloc>()
+              .add(ObsecureEvent(obsecure));
+        }
         return Container(
           padding: const EdgeInsets.all(4),
           decoration: BoxDecoration(
@@ -47,12 +52,17 @@ class MyAbstractTextFiled extends StatelessWidget {
           child: TextFormField(
             enabled: !disabled,
             controller: controller,
-            obscureText: !state.obsecure,
+            obscureText: state.obsecure,
             decoration: InputDecoration(
-              suffixIcon: (obsecure == true) ? _buildViewIcon(blocContext, state) : suffixIcon,
+              suffixIcon: (obsecure == true)
+                  ? _buildViewIcon(blocContext, state)
+                  : suffixIcon,
               prefixIcon: prefixIcon,
               prefixIconConstraints: BoxConstraints.tight(
-                const Size(30, 30),
+                const Size(50, 50),
+              ),
+              suffixIconConstraints: BoxConstraints.tight(
+                const Size(50, 50),
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
@@ -114,8 +124,8 @@ class MyAbstractTextFiled extends StatelessWidget {
         onPressed: () => blocContext
             .read<MyTextFieldBloc>()
             .add(ObsecureEvent(!state.obsecure)),
-        icon: (state.obsecure == true)
-            ? const Icon(MingCute.eye_line)
-            : const Icon(MingCute.eye_close_line));
+        icon: (state.obsecure)
+            ? const Icon(MingCute.eye_close_line)
+            : const Icon(MingCute.eye_line));
   }
 }

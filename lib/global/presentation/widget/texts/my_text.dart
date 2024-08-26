@@ -30,7 +30,7 @@ class MyText extends StatelessWidget {
       text,
       style: style,
       overflow: overflow,
-      softWrap: softWrap,
+      softWrap: softWrap,textAlign: TextAlign.center,
     );
   }
 }

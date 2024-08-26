@@ -69,11 +69,12 @@ class MyTile extends StatelessWidget {
           )
         : GestureDetector(
             onTap: onTap,
-            child: Material(
-              borderRadius: const BorderRadius.all(
-                Radius.circular(10),
+            child: Container(
+              height: 50,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                color: secondaryLightest,
               ),
-              color: secondaryLightest,
               child: (isNavigator)
                   ? MyAbstractTile.navigator(
                       text: text,
