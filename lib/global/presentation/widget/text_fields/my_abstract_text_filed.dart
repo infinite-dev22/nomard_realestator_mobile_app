@@ -49,7 +49,7 @@ class MyAbstractTextFiled extends StatelessWidget {
             controller: controller,
             obscureText: !state.obsecure,
             decoration: InputDecoration(
-              suffixIcon: suffixIcon ?? _buildViewIcon(blocContext, state),
+              suffixIcon: (obsecure == true) ? _buildViewIcon(blocContext, state) : suffixIcon,
               prefixIcon: prefixIcon,
               prefixIconConstraints: BoxConstraints.tight(
                 const Size(30, 30),
