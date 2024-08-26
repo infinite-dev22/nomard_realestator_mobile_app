@@ -23,7 +23,7 @@ class FacilityItem extends StatelessWidget {
                 iconColor: Theme.of(context).colorScheme.primary,
               ),
               const SizedBox(width: 5),
-              MyText.bold(facility.text),
+              MyText.semiBold(facility.text),
             ],
           )
         : Column(
@@ -34,7 +34,7 @@ class FacilityItem extends StatelessWidget {
                 iconColor: Theme.of(context).colorScheme.primary,
               ),
               const SizedBox(height: 5),
-              MyText.bold(facility.text),
+              MyText.semiBold(facility.text),
             ],
           );
   }
