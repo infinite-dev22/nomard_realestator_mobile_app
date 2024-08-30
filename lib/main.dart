@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Real Estate Property',
       theme: lightTheme,
-      darkTheme: darkTheme,
+      // darkTheme: darkTheme,
       home: const OnBoarding(),
     );
   }
