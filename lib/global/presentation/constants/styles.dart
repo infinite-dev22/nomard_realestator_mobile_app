@@ -19,6 +19,10 @@ const TextStyle semiBoldStyle = TextStyle(
   fontWeight: FontWeight.w500,
 );
 const TextStyle regularStyle = TextStyle();
+const TextStyle smallStyle = TextStyle(
+  fontSize: 13,
+  fontWeight: FontWeight.w400,
+);
 const TextStyle captionStyle = TextStyle(
   fontSize: 12,
   fontWeight: FontWeight.w400,
