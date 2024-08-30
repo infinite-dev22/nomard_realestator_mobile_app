@@ -6,16 +6,12 @@ import 'package:real_estate_property/notifications/data/model/notification_model
 import '../../../global/presentation/widget/icon_holders/my_round_icon.dart';
 
 class NotificationItem extends StatelessWidget {
-  final IconData icon;
-  final Color? backgroundColor;
   final double? size;
   final NotificationModel notification;
 
   const NotificationItem(
     this.notification, {
     super.key,
-    required this.icon,
-    this.backgroundColor,
     this.size = 30,
   });
 
@@ -38,8 +34,8 @@ class NotificationItem extends StatelessWidget {
       child: Row(
         children: [
           MyRoundIcon.medium(
-            icon: icon,
-            backgroundColor: backgroundColor,
+            icon: notification.icon,
+            backgroundColor: notification.backgroundColor,
             iconColor: Colors.white,
           ),
           const SizedBox(width: 20),
@@ -48,7 +44,7 @@ class NotificationItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               MyText.bold(notification.title),
-              MyText.regular(
+              MyText.small(
                 notification.bodyPreview,
                 color: secondary,
               ),
