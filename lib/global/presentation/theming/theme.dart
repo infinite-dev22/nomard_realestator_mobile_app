@@ -4,6 +4,7 @@ import '../constants/app_colors.dart';
 
 ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
+    fontFamily: 'Roboto',
     colorScheme: const ColorScheme.light(
       surface: bgLight,
       primary: primary,
