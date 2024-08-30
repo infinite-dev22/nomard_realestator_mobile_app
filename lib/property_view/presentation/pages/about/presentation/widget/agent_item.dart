@@ -38,19 +38,20 @@ class AgentItem extends StatelessWidget {
           children: [
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.chat_outlined),
+              icon: const Icon(Icons.chat_outlined),
               color: secondaryDark,
-              style: ButtonStyle(
+              style: const ButtonStyle(
                 backgroundColor: WidgetStatePropertyAll(
                   secondaryLight,
                 ),
               ),
             ),
+            const SizedBox(width: 8),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.phone_outlined),
+              icon: const Icon(Icons.phone_outlined),
               color: secondaryDark,
-              style: ButtonStyle(
+              style: const ButtonStyle(
                 backgroundColor: WidgetStatePropertyAll(
                   secondaryLight,
                 ),
