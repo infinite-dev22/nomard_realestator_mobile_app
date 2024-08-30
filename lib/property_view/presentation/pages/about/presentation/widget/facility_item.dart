@@ -23,7 +23,10 @@ class FacilityItem extends StatelessWidget {
                 iconColor: Theme.of(context).colorScheme.primary,
               ),
               const SizedBox(width: 5),
-              MyText.semiBold(facility.text),
+              MyText.semiBold(
+                facility.text,
+                overflow: TextOverflow.ellipsis,
+              ),
             ],
           )
         : Column(
@@ -34,7 +37,10 @@ class FacilityItem extends StatelessWidget {
                 iconColor: Theme.of(context).colorScheme.primary,
               ),
               const SizedBox(height: 5),
-              MyText.semiBold(facility.text),
+              MyText.regular(
+                facility.text,
+                overflow: TextOverflow.ellipsis,
+              ),
             ],
           );
   }
