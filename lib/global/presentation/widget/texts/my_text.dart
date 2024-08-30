@@ -24,6 +24,12 @@ class MyText extends StatelessWidget {
       FontWeight fontWeight = FontWeight.normal, this.overflow, this.softWrap})
       : style = regularStyle.copyWith(color: color, fontWeight: fontWeight);
 
+  MyText.small(this.text,
+      {super.key,
+      Color color = secondaryDark,
+      FontWeight fontWeight = FontWeight.normal, this.overflow, this.softWrap})
+      : style = smallStyle.copyWith(color: color, fontWeight: fontWeight);
+
   @override
   Widget build(BuildContext context) {
     return Text(
