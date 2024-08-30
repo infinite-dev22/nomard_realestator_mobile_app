@@ -100,53 +100,64 @@ class HomeLayout extends StatelessWidget {
     );
 
     return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) => Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            HomeAppBar(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(
-                  width: constraints.maxWidth * .89,
-                  child: MyTextField(
-                    hint: "Search",
-                    prefixIcon: Icon(MingCute.search_2_fill),
-                  ),
+            Padding(
+              padding: EdgeInsets.all(16),
+              child: const HomeAppBar(),
+            ),
+            Padding(
+              padding: EdgeInsets.all(16),
+              child: LayoutBuilder(
+                builder: (BuildContext context, BoxConstraints constraints) =>
+                    Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: constraints.maxWidth * .88,
+                      child: const MyTextField(
+                        hint: "Search",
+                        prefixIcon: Icon(MingCute.search_2_fill),
+                      ),
+                    ),
+                    MyRoundIcon.small(
+                      icon: MingCute.settings_6_line,
+                      radius: 10,
+                      elevated: false,
+                      backgroundColor: Theme.of(context).colorScheme.primary,
+                      iconColor: Colors.white,
+                    ),
+                  ],
                 ),
-                MyRoundIcon.small(
-                  icon: MingCute.settings_6_line,
-                  radius: 10,
-                  elevated: false,
-                  backgroundColor: Theme.of(context).colorScheme.primary,
-                  iconColor: Colors.white,
-                ),
-              ],
+              ),
             ),
             Column(
               children: [
-                MyLinkedText(
-                  "Featured",
-                  "See all",
-                  color: Theme.of(context).colorScheme.primary,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: MyLinkedText(
+                    "Featured",
+                    "See all",
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
                 ),
-                const SizedBox(height: 16),
-                ConstrainedBox(
-                  constraints: const BoxConstraints(maxHeight: 300),
-                  child: CarouselView(
-                    itemExtent: constraints.maxWidth * .7,
-                    shrinkExtent: 300,
-                    itemSnapping: true,
-                    shape: InputBorder.none,
-                    controller: CarouselController(initialItem: 1),
-                    onTap: null,
-                    elevation: 8,
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.only(
+                    left: 8,
+                    top: 16,
+                    bottom: 16,
+                  ),
+                  child: Row(
                     children:
                         List<Widget>.generate(properties.length, (int index) {
-                      return MyPropertyCard(properties[index],
-                          width: constraints.maxWidth);
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: MyPropertyCard(properties[index],
+                            width: constraints.maxWidth * .7),
+                      );
                     }),
                   ),
                 ),
@@ -154,25 +165,29 @@ class HomeLayout extends StatelessWidget {
             ),
             Column(
               children: [
-                MyLinkedText(
-                  "Nearby Location",
-                  "See all",
-                  color: Theme.of(context).colorScheme.primary,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: MyLinkedText(
+                    "Nearby Location",
+                    "See all",
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
                 ),
-                const SizedBox(height: 16),
-                ConstrainedBox(
-                  constraints: const BoxConstraints(maxHeight: 300),
-                  child: CarouselView(
-                    itemExtent: constraints.maxWidth * .7,
-                    shrinkExtent: 300,
-                    itemSnapping: true,
-                    shape: InputBorder.none,
-                    onTap: null,
-                    elevation: 8,
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.only(
+                    left: 8,
+                    top: 16,
+                    bottom: 16,
+                  ),
+                  child: Row(
                     children:
                         List<Widget>.generate(properties.length, (int index) {
-                      return MyPropertyCard(properties[index],
-                          width: constraints.maxWidth);
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: MyPropertyCard(properties[index],
+                            width: constraints.maxWidth * .7),
+                      );
                     }),
                   ),
                 ),
@@ -180,25 +195,29 @@ class HomeLayout extends StatelessWidget {
             ),
             Column(
               children: [
-                MyLinkedText(
-                  "Recommended Property",
-                  "See all",
-                  color: Theme.of(context).colorScheme.primary,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: MyLinkedText(
+                    "Recommended Property",
+                    "See all",
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
                 ),
-                const SizedBox(height: 16),
-                ConstrainedBox(
-                  constraints: const BoxConstraints(maxHeight: 300),
-                  child: CarouselView(
-                    itemExtent: constraints.maxWidth,
-                    shrinkExtent: 300,
-                    itemSnapping: true,
-                    shape: InputBorder.none,
-                    onTap: null,
-                    elevation: 8,
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.only(
+                    left: 8,
+                    top: 16,
+                    bottom: 16,
+                  ),
+                  child: Row(
                     children:
                         List<Widget>.generate(properties.length, (int index) {
-                      return MyPropertyCard(properties[index],
-                          width: constraints.maxWidth);
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: MyPropertyCard(properties[index],
+                            width: constraints.maxWidth - 30),
+                      );
                     }),
                   ),
                 ),
