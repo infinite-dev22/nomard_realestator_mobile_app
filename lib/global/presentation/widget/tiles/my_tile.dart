@@ -59,11 +59,13 @@ class MyTile extends StatelessWidget {
                       text: text,
                       width: width,
                       icon: icon,
+                      widget: widget,
                     )
                   : MyAbstractTile(
                       text: text,
                       width: width,
                       icon: icon,
+                      widget: widget,
                     ),
             ),
           )
@@ -80,12 +82,14 @@ class MyTile extends StatelessWidget {
                       text: text,
                       width: width,
                       icon: icon,
+                      widget: widget,
                     )
                   : MyAbstractTile(
                       text: text,
                       width: width,
                       icon: icon,
-                    ),
+                      widget: widget,
+                    widget,
             ),
           );
   }
