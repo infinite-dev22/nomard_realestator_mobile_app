@@ -8,6 +8,7 @@ class MyAbstractTile extends StatelessWidget {
   final double width;
   final IconData? rightIcon;
   final IconData? icon;
+  final Widget? widget;
 
   const MyAbstractTile({
     super.key,
@@ -15,6 +16,7 @@ class MyAbstractTile extends StatelessWidget {
     this.disabled = false,
     this.width = double.infinity,
     this.icon,
+    this.widget,
   }) : rightIcon = null;
 
   const MyAbstractTile.navigator({
@@ -23,12 +25,17 @@ class MyAbstractTile extends StatelessWidget {
     this.disabled = false,
     this.width = double.infinity,
     this.icon,
+    this.widget,
   }) : rightIcon = OctIcons.chevron_right;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: (icon != null) ? Icon(icon) : null,
+      leading: (widget != null)
+          ? widget
+          : (icon != null)
+              ? Icon(icon)
+              : null,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
