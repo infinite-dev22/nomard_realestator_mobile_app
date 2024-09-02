@@ -35,6 +35,7 @@ class MyAbstractTile extends StatelessWidget {
           MyText.regular(text),
         ],
       ),
+      titleTextStyle: const TextStyle(fontSize: 14),
       trailing: (rightIcon != null) ? Icon(rightIcon) : null,
     );
   }

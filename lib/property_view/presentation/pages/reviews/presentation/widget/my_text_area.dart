@@ -21,8 +21,8 @@ class MyTextArea extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 10),
       child: TextFormField(
         keyboardType: TextInputType.multiline,
-        minLines: 4,
-        maxLines: 6,
+        minLines: 7,
+        maxLines: 10,
         enabled: !disabled,
         maxLength: 200,
         controller: controller,
@@ -32,7 +32,11 @@ class MyTextArea extends StatelessWidget {
             horizontal: 10.0,
           ),
           hintText: hint,
-          hintStyle: const TextStyle(color: secondary),
+          hintStyle: const TextStyle(
+            color: secondary,
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+          ),
           enabled: !disabled,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
