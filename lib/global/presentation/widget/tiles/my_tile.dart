@@ -12,6 +12,7 @@ class MyTile extends StatelessWidget {
   final bool disabled;
   final double width;
   final IconData? icon;
+  final Widget? widget;
 
   const MyTile.flat({
     super.key,
@@ -20,6 +21,7 @@ class MyTile extends StatelessWidget {
     this.isNavigator = false,
     this.disabled = false,
     this.icon,
+    this.widget,
   })  : bouncable = false,
         width = double.infinity;
 
@@ -29,6 +31,7 @@ class MyTile extends StatelessWidget {
     required this.onTap,
     this.disabled = false,
     this.icon,
+    this.widget,
   })  : bouncable = true,
         isNavigator = false,
         width = double.infinity;
@@ -39,6 +42,7 @@ class MyTile extends StatelessWidget {
     required this.onTap,
     this.disabled = false,
     this.icon,
+    this.widget,
   })  : bouncable = true,
         isNavigator = true,
         width = double.infinity;
@@ -89,7 +93,7 @@ class MyTile extends StatelessWidget {
                       width: width,
                       icon: icon,
                       widget: widget,
-                    widget,
+                    ),
             ),
           );
   }
