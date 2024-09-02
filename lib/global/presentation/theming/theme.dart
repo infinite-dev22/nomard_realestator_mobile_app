@@ -5,11 +5,11 @@ import '../constants/app_colors.dart';
 ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     fontFamily: 'Roboto',
-    colorScheme: const ColorScheme.light(
+    colorScheme: ColorScheme.light(
       surface: bgLight,
       primary: primary,
       secondary: secondary,
-      shadow: shadowLight,
+      shadow: shadowLight.withOpacity(.4),
     ));
 
 ThemeData darkTheme = ThemeData(
