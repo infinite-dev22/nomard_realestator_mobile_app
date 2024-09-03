@@ -95,7 +95,7 @@ class MyAbstractTextFiled extends StatelessWidget {
               ),
             ),
             hintText: hint,
-            hintStyle: const TextStyle(color: secondary),
+            hintStyle: const TextStyle(color: secondaryDark, fontSize: 12),
             contentPadding: const EdgeInsets.symmetric(
               vertical: 8.0,
               horizontal: 10.0,
