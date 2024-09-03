@@ -9,6 +9,7 @@ class MyButton extends StatelessWidget {
   final bool busy;
   final bool outlined;
   final double width;
+  final Widget? widget;
   final Function() onTap;
 
   const MyButton({
@@ -18,6 +19,7 @@ class MyButton extends StatelessWidget {
     this.busy = false,
     this.outlined = false,
     this.width = double.infinity,
+    this.widget,
     required this.onTap,
   });
 
@@ -30,6 +32,7 @@ class MyButton extends StatelessWidget {
               text: text,
               outlined: outlined,
               width: width,
+              widget: widget,
             ),
           )
         : MyAbstractButton(
@@ -38,6 +41,7 @@ class MyButton extends StatelessWidget {
             busy: busy,
             outlined: outlined,
             width: width,
+            widget: widget,
           );
   }
 }

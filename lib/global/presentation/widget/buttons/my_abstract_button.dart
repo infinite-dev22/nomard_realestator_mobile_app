@@ -8,6 +8,7 @@ class MyAbstractButton extends StatelessWidget {
   final bool busy;
   final bool outlined;
   final double width;
+  final Widget? widget;
 
   const MyAbstractButton({
     super.key,
@@ -16,6 +17,7 @@ class MyAbstractButton extends StatelessWidget {
     this.busy = false,
     this.outlined = false,
     this.width = double.infinity,
+    this.widget,
   });
 
   @override
@@ -54,14 +56,30 @@ class MyAbstractButton extends StatelessWidget {
               ),
               strokeWidth: 4,
             )
-          : MyText.regular(
-              text,
-              color: outlined
-                  ? disabled
-                      ? secondary
-                      : Theme.of(context).colorScheme.primary
-                  : Colors.white,
-            ),
+          : (widget != null)
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    widget!,
+                    const SizedBox(width: 8),
+                    MyText.regular(
+                      text,
+                      color: outlined
+                          ? disabled
+                              ? secondary
+                              : Theme.of(context).colorScheme.primary
+                          : Colors.white,
+                    ),
+                  ],
+                )
+              : MyText.regular(
+                  text,
+                  color: outlined
+                      ? disabled
+                          ? secondary
+                          : Theme.of(context).colorScheme.primary
+                      : Colors.white,
+                ),
     );
   }
 }
