@@ -6,24 +6,38 @@ class MyLinkedText extends StatelessWidget {
   final String title;
   final String text;
   final Color color;
+  final bool isHeading;
 
-  const MyLinkedText(
+  const MyLinkedText.header(
     this.title,
     this.text, {
     super.key,
     this.color = secondaryDark,
-  });
+  }) : isHeading = true;
+
+  const MyLinkedText.normal(
+    this.title,
+    this.text, {
+    super.key,
+    this.color = secondaryDark,
+  }) : isHeading = false;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        MyText.h2(
+        (isHeading) ? MyText.h2(
           title,
           color: secondaryDark,
+        ) : MyText.bold(
+          title,
+          color: secondary,
         ),
-        MyText.regular(
+        (isHeading) ? MyText.regular(
+          text,
+          color: color,
+        ):MyText.bold(
           text,
           color: color,
         ),
