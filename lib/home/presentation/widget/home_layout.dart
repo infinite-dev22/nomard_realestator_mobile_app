@@ -137,7 +137,7 @@ class HomeLayout extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: MyLinkedText(
+                  child: MyLinkedText.header(
                     "Featured",
                     "See all",
                     color: Theme.of(context).colorScheme.primary,
@@ -167,7 +167,7 @@ class HomeLayout extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: MyLinkedText(
+                  child: MyLinkedText.header(
                     "Nearby Location",
                     "See all",
                     color: Theme.of(context).colorScheme.primary,
@@ -197,7 +197,7 @@ class HomeLayout extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: MyLinkedText(
+                  child: MyLinkedText.header(
                     "Recommended Property",
                     "See all",
                     color: Theme.of(context).colorScheme.primary,
