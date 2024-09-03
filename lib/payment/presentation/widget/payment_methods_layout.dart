@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_any_logo/flutter_logo.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 import 'package:real_estate_property/global/presentation/widget/tiles/my_tile.dart';
+
+import '../../../global/presentation/widget/buttons/my_button.dart';
 
 class PaymentMethodsLayout extends StatelessWidget {
   const PaymentMethodsLayout({super.key});
@@ -31,12 +34,29 @@ class PaymentMethodsLayout extends StatelessWidget {
       ),
     ];
 
-    return ListView.separated(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      itemCount: widgets.length,
-      itemBuilder: (context, index) => widgets[index],
-      separatorBuilder: (BuildContext context, int index) =>
-          const SizedBox(height: 16),
+    return Column(
+      children: [
+        Expanded(
+          flex: 12,
+          child: ListView.separated(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            itemCount: widgets.length,
+            itemBuilder: (context, index) => widgets[index],
+            separatorBuilder: (BuildContext context, int index) =>
+                const SizedBox(height: 16),
+          ),
+        ),
+        Expanded(
+          flex: 2,
+          child: Center(
+            child: MyButton(
+              widget: const Icon(Icons.add, color: secondaryLight,),
+              text: "Add Card",
+              onTap: () {},
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
