@@ -14,7 +14,7 @@ class SmallPropertyImage extends StatelessWidget {
   const SmallPropertyImage(
       this.file, {
         super.key,
-        this.width = 100,
+        this.width = 120,
         this.height = 100,
         this.bgColor,
         this.borderWidth = 0,
