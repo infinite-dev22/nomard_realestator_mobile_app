@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_any_logo/flutter_logo.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 
-import '../../../global/presentation/widget/texts/my_text.dart';
+import '../../../../../../global/presentation/widget/texts/my_text.dart';
 
 class CreditCard extends StatelessWidget {
   final TextEditingController bankNameController;
@@ -21,14 +21,14 @@ class CreditCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(8),
       child: Stack(
         children: [
           Container(
             height: 220,
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(8),
               color: Theme.of(context).colorScheme.primary,
               boxShadow: [
                 BoxShadow(
