@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:real_estate_property/payment/presentation/pages/review_summary/presentation/pages/review_summary.dart';
+import 'package:real_estate_property/payment/presentation/pages/review_summary/presentation/pages/review_summary.dart';
 
 import '../../../../../../global/data/model/property_model.dart';
 import '../../../../../../global/presentation/constants/app_colors.dart';
@@ -6,10 +8,10 @@ import '../../../../../../global/presentation/widget/pills/icon_text_pill.dart';
 import '../../../../../../global/presentation/widget/pills/text_pill.dart';
 import '../../../../../../global/presentation/widget/texts/my_text.dart';
 
-class ReviewPropertyDetails extends StatelessWidget {
+class ReviewSummaryPropertyDetails extends StatelessWidget {
   final PropertyModel propertyModel;
 
-  const ReviewPropertyDetails(this.propertyModel, {super.key});
+  const ReviewSummaryPropertyDetails(this.propertyModel, {super.key});
 
   @override
   Widget build(BuildContext context) {
