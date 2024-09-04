@@ -57,7 +57,7 @@ class SignInLayout extends StatelessWidget {
           flex: 1,
           child: Center(
             child: SignInLink(
-              onTap: () => GoRouter.of(context).goNamed("sign_in"),
+              onTap: () => GoRouter.of(context).pushNamed("signin"),
             ),
           ),
         ),
