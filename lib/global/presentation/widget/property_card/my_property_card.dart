@@ -9,11 +9,13 @@ import '../../bloc/property_card/property_card_bloc.dart';
 class MyPropertyCard extends StatelessWidget {
   final PropertyModel propertyModel;
   final double? width;
+  final double height;
 
   const MyPropertyCard(
     this.propertyModel, {
     super.key,
     this.width,
+    this.height = 150,
   });
 
   @override
@@ -41,7 +43,7 @@ class MyPropertyCard extends StatelessWidget {
             child: PropertyCardImage(
               propertyModel.images[1],
               width: double.infinity,
-              height: 150,
+              height: height,
             ),
           ),
           PropertyCardDetails(
