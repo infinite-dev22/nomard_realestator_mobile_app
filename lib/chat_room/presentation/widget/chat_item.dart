@@ -26,13 +26,14 @@ class ChatItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     MyText.bold(chatItem.name),
-                    if(chatItem.messageCount! > 0)Badge(
-                      label: MyText.caption(
-                        chatItem.messageCount.toString(),
-                        color: Colors.white,
+                    if (chatItem.messageCount! > 0)
+                      Badge(
+                        label: MyText.caption(
+                          chatItem.messageCount.toString(),
+                          color: Colors.white,
+                        ),
+                        backgroundColor: Theme.of(context).colorScheme.primary,
                       ),
-                      backgroundColor: Theme.of(context).colorScheme.primary,
-                    ),
                   ],
                 ),
                 const SizedBox(width: 10),
@@ -46,7 +47,11 @@ class ChatItem extends StatelessWidget {
                         color: secondary,
                         overflow: TextOverflow.ellipsis,
                       ),
-                    ),MyText.caption(chatItem.time, color: secondary,),
+                    ),
+                    MyText.caption(
+                      chatItem.time,
+                      color: secondary,
+                    ),
                   ],
                 ),
               ],
