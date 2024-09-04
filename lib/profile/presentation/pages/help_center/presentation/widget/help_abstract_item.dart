@@ -24,7 +24,7 @@ class HelpAbstractItem extends StatelessWidget {
               .read<HelpItemBloc>()
               .add(ShowContentEvent(!state.showContent)),
           child: AnimatedContainer(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             duration: const Duration(milliseconds: 350),
             width: double.infinity,
             alignment: Alignment.center,
@@ -50,8 +50,8 @@ class HelpAbstractItem extends StatelessWidget {
                       color: secondaryDark,
                     ),
                     (state.showContent == true)
-                        ? const Icon(FontAwesome.chevron_up_solid)
-                        : const Icon(FontAwesome.chevron_down_solid),
+                        ? const Icon(FontAwesome.chevron_up_solid, size: 16,)
+                        : const Icon(FontAwesome.chevron_down_solid, size: 16,),
                   ],
                 ),
                 if ((state.showContent == true))
@@ -60,7 +60,7 @@ class HelpAbstractItem extends StatelessWidget {
                       const SizedBox(height: 16),
                       MyText.regular(
                         help.body,
-                        color: secondary,
+                        color: secondary,textAlign: TextAlign.left,
                       ),
                     ],
                   ),
