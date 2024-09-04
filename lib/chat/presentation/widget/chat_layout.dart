@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:real_estate_property/chat_room/presentation/widget/chat_item.dart';
+import 'package:real_estate_property/chat/presentation/widget/chat_item.dart';
 
 import '../../../global/data/model/property_model.dart';
 import '../../data/model/chat_item_model.dart';
 
-class ChatRoomLayout extends StatelessWidget {
-  const ChatRoomLayout({super.key});
+class ChatLayout extends StatelessWidget {
+  const ChatLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var chatRooms = List<ChatItemModel>.of(
+    var chats = List<ChatItemModel>.of(
       [
         ChatItemModel(
           "assets/images/house_1.jpg",
@@ -137,8 +137,8 @@ class ChatRoomLayout extends StatelessWidget {
 
     return ListView.separated(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      itemCount: chatRooms.length,
-      itemBuilder: (context, index) => ChatItem(chatRooms[index]),
+      itemCount: chats.length,
+      itemBuilder: (context, index) => ChatItem(chats[index]),
       separatorBuilder: (BuildContext context, int index) =>
       const SizedBox(height: 16),
     );

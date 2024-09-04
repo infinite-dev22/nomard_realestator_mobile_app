@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:real_estate_property/chat_room/presentation/bloc/voice_note/voice_note_bloc.dart';
-import 'package:real_estate_property/chat_room/presentation/widget/abstract_message_item.dart';
+import 'package:real_estate_property/chat/presentation/bloc/voice_note/voice_note_bloc.dart';
+import 'package:real_estate_property/chat/presentation/widget/abstract_message_item.dart';
 
 import '../../data/model/message_model.dart';
 

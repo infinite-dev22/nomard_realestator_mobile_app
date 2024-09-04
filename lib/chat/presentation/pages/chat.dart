@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:real_estate_property/chat_room/presentation/widget/chat_room_layout.dart';
+import 'package:real_estate_property/chat/presentation/widget/chat_layout.dart';
 import 'package:real_estate_property/global/presentation/widget/buttons/my_back_button.dart';
 import 'package:real_estate_property/global/presentation/widget/icon_holders/my_round_icon.dart';
 import 'package:real_estate_property/global/presentation/widget/text_fields/my_text_field.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
 
-class ChatRoom extends StatelessWidget {
-  const ChatRoom({super.key});
+class Chat extends StatelessWidget {
+  const Chat({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class ChatRoom extends StatelessWidget {
           ),
         ),
       ),
-      body: const ChatRoomLayout(),
+      body: const ChatLayout(),
     );
   }
 }
