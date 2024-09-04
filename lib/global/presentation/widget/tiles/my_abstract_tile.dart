@@ -39,7 +39,7 @@ class MyAbstractTile extends StatelessWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          MyText.regular(text),
+          (rightIcon != null) ? MyText.bold(text) : MyText.regular(text),
         ],
       ),
       titleTextStyle: const TextStyle(fontSize: 14),
