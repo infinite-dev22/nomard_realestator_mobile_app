@@ -12,6 +12,7 @@ class SignInLink extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         MyText.caption("Don't Have An Account?"),
+        const SizedBox(width: 8),
         GestureDetector(
           onTap: onTap,
           child: Text(

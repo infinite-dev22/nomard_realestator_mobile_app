@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/authentication/presentation/pages/sign_in/presentation/widget/sign_in_link.dart';
 import 'package:real_estate_property/authentication/presentation/pages/sign_up/presentation/widget/or_widget.dart';
@@ -56,7 +57,7 @@ class SignInLayout extends StatelessWidget {
           flex: 1,
           child: Center(
             child: SignInLink(
-              onTap: () {},
+              onTap: () => GoRouter.of(context).goNamed("sign_in"),
             ),
           ),
         ),
