@@ -31,7 +31,7 @@ class UserProfileImage extends StatelessWidget {
         height: size,
         decoration: BoxDecoration(
           color: bgColor,
-          borderRadius: BorderRadius.circular(50),
+          borderRadius: BorderRadius.circular(1000),
           image: DecorationImage(
             image: AssetImage(file),
             fit: imageFit,
