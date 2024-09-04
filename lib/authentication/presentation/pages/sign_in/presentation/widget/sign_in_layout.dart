@@ -28,12 +28,12 @@ class SignInLayout extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           ForgotPasswordLink(
-            onTap: () {},
+            onTap: () => GoRouter.of(context).pushNamed("forgot"),
           ),
           const SizedBox(height: 24),
           MyButton(
             text: "Sign In",
-            onTap: () {},
+            onTap: () => GoRouter.of(context).goNamed("home"),
           ),
         ],
       ),
@@ -57,7 +57,7 @@ class SignInLayout extends StatelessWidget {
           flex: 1,
           child: Center(
             child: SignInLink(
-              onTap: () => GoRouter.of(context).pushNamed("signup"),
+              onTap: () => GoRouter.of(context).goNamed("signup"),
             ),
           ),
         ),

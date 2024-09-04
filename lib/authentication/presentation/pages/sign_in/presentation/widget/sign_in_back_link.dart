@@ -12,6 +12,7 @@ class SignInBackLink extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         MyText.caption("Go Back To"),
+        const SizedBox(width: 8),
         GestureDetector(
           onTap: onTap,
           child: Text(

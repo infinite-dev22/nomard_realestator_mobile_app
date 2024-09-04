@@ -15,7 +15,7 @@ class SignUp extends StatelessWidget {
       appBar: AppBar(
         leading: (GoRouter.of(context).canPop() == true)
             ? MyBackButton(
-                onTap: () {},
+                onTap: () => GoRouter.of(context).pop(),
               )
             : null,
         bottom: PreferredSize(

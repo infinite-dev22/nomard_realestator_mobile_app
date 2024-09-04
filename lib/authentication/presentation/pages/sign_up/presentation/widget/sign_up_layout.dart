@@ -49,7 +49,7 @@ class SignUpLayout extends StatelessWidget {
           const SizedBox(height: 16),
           MyButton(
             text: "Sign Up",
-            onTap: () {},
+            onTap: () => GoRouter.of(context).goNamed("sign_in"),
           ),
         ],
       ),
@@ -73,7 +73,7 @@ class SignUpLayout extends StatelessWidget {
           flex: 1,
           child: Center(
             child: SignUpLink(
-              onTap: () => GoRouter.of(context).push("signin"),
+              onTap: () => GoRouter.of(context).goNamed("sign_in"),
             ),
           ),
         ),
@@ -81,5 +81,3 @@ class SignUpLayout extends StatelessWidget {
     );
   }
 }
-
-class MyCheckbox {}
