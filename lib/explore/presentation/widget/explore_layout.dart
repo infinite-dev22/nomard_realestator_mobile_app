@@ -89,6 +89,7 @@ class ExploreLayout extends StatelessWidget {
           child: MyPropertyCard(
             property,
             height: 160,
+            onTap: () => GoRouter.of(context).pushNamed("property_view"),
           ),
         ),
       ],

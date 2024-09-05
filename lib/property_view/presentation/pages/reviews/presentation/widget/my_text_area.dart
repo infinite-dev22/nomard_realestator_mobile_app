@@ -28,7 +28,7 @@ class MyTextArea extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(
-            vertical: 5.0,
+            vertical: 10.0,
             horizontal: 10.0,
           ),
           hintText: hint,

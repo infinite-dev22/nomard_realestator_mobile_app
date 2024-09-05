@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 
@@ -56,9 +57,7 @@ class PropertyViewImage extends StatelessWidget {
               top: 40,
               left: 10,
               child: IconButton(
-                onPressed: () => blocContext
-                    .read<PropertyImageViewBloc>()
-                    .add(LikeEvent(!state.like)),
+                onPressed: () => GoRouter.of(context).pop(),
                 style: ButtonStyle(
                   backgroundColor: WidgetStatePropertyAll(
                     Theme.of(context).colorScheme.surface.withOpacity(.8),
@@ -76,9 +75,7 @@ class PropertyViewImage extends StatelessWidget {
               child: Row(
                 children: [
                   IconButton(
-                    onPressed: () => blocContext
-                        .read<PropertyImageViewBloc>()
-                        .add(LikeEvent(!state.like)),
+                    onPressed: ()=>showAboutDialog(context: context),
                     style: ButtonStyle(
                       backgroundColor: WidgetStatePropertyAll(
                         Theme.of(context).colorScheme.surface.withOpacity(.8),

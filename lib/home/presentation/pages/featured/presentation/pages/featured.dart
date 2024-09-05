@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
-
-import '../../../../../../global/presentation/widget/buttons/my_back_button.dart';
-import '../../../../../../global/presentation/widget/icon_holders/my_round_icon.dart';
-import '../../../../../../global/presentation/widget/text_fields/my_text_field.dart';
-import '../../../../../../global/presentation/widget/texts/my_text.dart';
-import '../widget/featured_layout.dart';
+import 'package:real_estate_property/global/presentation/widget/buttons/my_back_button.dart';
+import 'package:real_estate_property/global/presentation/widget/icon_holders/my_round_icon.dart';
+import 'package:real_estate_property/global/presentation/widget/text_fields/my_text_field.dart';
+import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
+import 'package:real_estate_property/home/presentation/pages/featured/presentation/widget/featured_layout.dart';
 
 class Featured extends StatelessWidget {
   const Featured({super.key});
@@ -64,7 +63,7 @@ class Featured extends StatelessWidget {
           ),
         ),
       ),
-      body: FeaturedLayout(),
+      body: const FeaturedLayout(),
     );
   }
 }

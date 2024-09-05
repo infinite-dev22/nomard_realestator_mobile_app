@@ -10,43 +10,48 @@ class MyPropertyCard extends StatelessWidget {
   final PropertyModel propertyModel;
   final double? width;
   final double height;
+  final Function()? onTap;
 
   const MyPropertyCard(
     this.propertyModel, {
     super.key,
     this.width,
     this.height = 150,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      elevation: 16,
-      shadowColor: Theme.of(context).colorScheme.shadow,
-      borderRadius: BorderRadius.circular(16),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 350),
-        width: width ?? double.infinity,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: Theme.of(context).colorScheme.surface,
-        ),
-        child: Column(
-          children: [
-            BlocProvider(
-              create: (context) => PropertyCardBloc(),
-              child: PropertyCardImage(
-                propertyModel.images[1],
-                width: double.infinity,
-                height: height,
+    return GestureDetector(
+      onTap: onTap,
+      child: Material(
+        elevation: 16,
+        shadowColor: Theme.of(context).colorScheme.shadow,
+        borderRadius: BorderRadius.circular(16),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 350),
+          width: width ?? double.infinity,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: Theme.of(context).colorScheme.surface,
+          ),
+          child: Column(
+            children: [
+              BlocProvider(
+                create: (context) => PropertyCardBloc(),
+                child: PropertyCardImage(
+                  propertyModel.images[1],
+                  width: double.infinity,
+                  height: height,
+                ),
               ),
-            ),
-            PropertyCardDetails(
-              propertyModel,
-              large: width == null,
-            ),
-          ],
+              PropertyCardDetails(
+                propertyModel,
+                large: width == null,
+              ),
+            ],
+          ),
         ),
       ),
     );

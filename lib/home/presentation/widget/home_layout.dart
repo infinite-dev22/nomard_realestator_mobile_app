@@ -120,8 +120,12 @@ class HomeLayout extends StatelessWidget {
                   properties.length,
                   (index) => Padding(
                     padding: const EdgeInsets.all(16),
-                    child: MyPropertyCard(properties[index],
-                        width: size.width * .7),
+                    child: MyPropertyCard(
+                      properties[index],
+                      width: size.width * .7,
+                      onTap: () =>
+                          GoRouter.of(context).pushNamed("property_view"),
+                    ),
                   ),
                 ),
               ),
@@ -151,8 +155,12 @@ class HomeLayout extends StatelessWidget {
                   properties.length,
                   (index) => Padding(
                     padding: const EdgeInsets.all(16),
-                    child: MyPropertyCard(properties[index],
-                        width: size.width * .7),
+                    child: MyPropertyCard(
+                      properties[index],
+                      width: size.width * .7,
+                      onTap: () =>
+                          GoRouter.of(context).pushNamed("property_view"),
+                    ),
                   ),
                 ),
               ),
@@ -177,13 +185,18 @@ class HomeLayout extends StatelessWidget {
             ),
             child: SizedBox(
               height: 335,
-              child: MyCarousel(viewPortFraction: .98,
+              child: MyCarousel(
+                viewPortFraction: .98,
                 children: List.generate(
                   properties.length,
                   (index) => Padding(
                     padding: const EdgeInsets.all(16),
-                    child: MyPropertyCard(properties[index],
-                        width: size.width * .7),
+                    child: MyPropertyCard(
+                      properties[index],
+                      width: size.width * .7,
+                      onTap: () =>
+                          GoRouter.of(context).pushNamed("property_view"),
+                    ),
                   ),
                 ),
               ),

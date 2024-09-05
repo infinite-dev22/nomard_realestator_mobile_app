@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_property/global/data/model/property_model.dart';
 import 'package:real_estate_property/global/presentation/widget/property_card/my_property_card.dart';
 
@@ -106,8 +107,11 @@ class RecommendedPropertiesLayout extends StatelessWidget {
           mainAxisSpacing: 16,
           childAspectRatio: .68),
       itemCount: properties.length,
-      itemBuilder: (context, index) =>
-          MyPropertyCard(properties[index], width: size.width * .5),
+      itemBuilder: (context, index) => MyPropertyCard(
+        properties[index],
+        width: size.width * .5,
+        onTap: () => GoRouter.of(context).pushNamed("property_view"),
+      ),
     );
   }
 }

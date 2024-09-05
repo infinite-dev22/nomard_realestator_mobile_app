@@ -67,7 +67,7 @@ class _PropertyViewLayoutState extends State<PropertyViewLayout>
         children: [
           PropertyImageView(
             property,
-            height: size.height * .4,
+            height: size.height * .3,
           ),
           TabBar(
             controller: _tabController,

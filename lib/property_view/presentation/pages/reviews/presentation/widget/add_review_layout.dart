@@ -6,8 +6,8 @@ import 'package:real_estate_property/property_view/presentation/pages/reviews/pr
 import '../../../../../../global/presentation/widget/buttons/my_button.dart';
 import '../../../../../../global/presentation/widget/texts/my_text.dart';
 
-class WorkoutReviewLayout extends StatelessWidget {
-  const WorkoutReviewLayout({super.key});
+class AddReviewLayout extends StatelessWidget {
+  const AddReviewLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
