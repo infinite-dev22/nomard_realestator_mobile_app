@@ -18,7 +18,7 @@ class Notifications extends StatelessWidget {
                   onTap: () => GoRouter.of(context).pop(),
                 )
               : null,
-          title: MyText.h2("Payment Methods"),
+          title: MyText.h2("Notifications"),
         ),
         body: const NotificationsLayout());
   }
