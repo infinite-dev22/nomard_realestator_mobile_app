@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
+import 'package:real_estate_property/global/presentation/widget/buttons/my_button.dart';
 import 'package:real_estate_property/global/presentation/widget/images/user_profile_image.dart';
 import 'package:real_estate_property/global/presentation/widget/text_fields/my_text_field.dart';
 import 'package:real_estate_property/global/presentation/widget/tiles/my_tile.dart';
-
-import '../../../../../../global/presentation/widget/buttons/my_button.dart';
 
 class EditProfileLayout extends StatelessWidget {
   const EditProfileLayout({super.key});
@@ -80,7 +80,7 @@ class EditProfileLayout extends StatelessWidget {
           child: Center(
             child: MyButton(
               text: "Save Update",
-              onTap: () {},
+              onTap: () => GoRouter.of(context).pop(),
             ),
           ),
         ),

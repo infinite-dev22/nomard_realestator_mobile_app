@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 import 'package:real_estate_property/global/presentation/widget/images/user_profile_image.dart';
@@ -24,7 +25,7 @@ class SettingsLayout extends StatelessWidget {
       MyTile.navigator(
         icon: MingCute.delete_2_line,
         text: "Deactivating Account",
-        onTap: () {},
+        onTap: () => GoRouter.of(context).goNamed("sign_in"),
       ),
     ];
 

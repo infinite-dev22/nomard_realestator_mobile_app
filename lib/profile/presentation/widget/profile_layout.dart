@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 import 'package:real_estate_property/global/presentation/widget/images/user_profile_image.dart';
@@ -28,7 +29,7 @@ class ProfileLayout extends StatelessWidget {
       MyTile.navigator(
         icon: MingCute.user_2_line,
         text: "My Account",
-        onTap: () {},
+        onTap: ()  => GoRouter.of(context).pushNamed("edit_profile"),
       ),
       MyTile.navigator(
         icon: MingCute.card_pay_line,
@@ -38,12 +39,12 @@ class ProfileLayout extends StatelessWidget {
       MyTile.navigator(
         icon: MingCute.settings_3_line,
         text: "Settings",
-        onTap: () {},
+        onTap: () => GoRouter.of(context).pushNamed("settings"),
       ),
       MyTile.navigator(
         icon: MingCute.time_line,
         text: "Help Center",
-        onTap: () {},
+        onTap: () => GoRouter.of(context).pushNamed("help_center"),
       ),
       MyTile.navigator(
         icon: MingCute.user_lock_line,
@@ -53,7 +54,7 @@ class ProfileLayout extends StatelessWidget {
       MyTile.navigator(
         icon: MingCute.exit_line,
         text: "Sign Out",
-        onTap: () {},
+        onTap: () => GoRouter.of(context).goNamed("sign_in"),
       ),
     ];
 
