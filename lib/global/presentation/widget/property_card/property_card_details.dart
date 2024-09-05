@@ -26,8 +26,8 @@ class PropertyCardDetails extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(
-            bottomLeft: Radius.circular(8),
-            bottomRight: Radius.circular(8),
+            bottomLeft: Radius.circular(16),
+            bottomRight: Radius.circular(16),
           ),
           color: Theme.of(context).colorScheme.surface,
         ),
