@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 import 'package:real_estate_property/global/presentation/widget/buttons/my_back_button.dart';
@@ -35,6 +36,12 @@ class ExploreLayout extends StatelessWidget {
       children: [
         Container(
           color: secondary,
+          child: Center(
+            child: MyText.regular(
+              "Your Map Here",
+              color: secondaryLightest,
+            ),
+          ),
         ),
         Positioned(
           top: 30,
@@ -45,7 +52,7 @@ class ExploreLayout extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               MyBackButton(
-                onTap: () {},
+                onTap: () => GoRouter.of(context).pop(),
               ),
               MyText.h2("Explore"),
               const SizedBox(width: 60),
@@ -77,7 +84,7 @@ class ExploreLayout extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: 100,
+          bottom: 80,
           left: 30,
           right: 30,
           child: MyPropertyCard(
