@@ -7,12 +7,14 @@ class MyLinkedText extends StatelessWidget {
   final String text;
   final Color color;
   final bool isHeading;
+  final Function()? onPressed;
 
   const MyLinkedText.header(
     this.title,
     this.text, {
     super.key,
     this.color = secondaryDark,
+    this.onPressed,
   }) : isHeading = true;
 
   const MyLinkedText.normal(
@@ -20,6 +22,7 @@ class MyLinkedText extends StatelessWidget {
     this.text, {
     super.key,
     this.color = secondaryDark,
+    this.onPressed,
   }) : isHeading = false;
 
   @override
@@ -27,20 +30,26 @@ class MyLinkedText extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        (isHeading) ? MyText.h2(
-          title,
-          color: secondaryDark,
-        ) : MyText.bold(
-          title,
-          color: secondary,
-        ),
-        (isHeading) ? MyText.regular(
-          text,
-          color: color,
-        ):MyText.bold(
-          text,
-          color: color,
-        ),
+        (isHeading)
+            ? MyText.h2(
+                title,
+                color: secondaryDark,
+              )
+            : MyText.bold(
+                title,
+                color: secondary,
+              ),
+        (isHeading)
+            ? TextButton(
+                onPressed: onPressed,
+                child: MyText.regular(text, color: color),
+              )
+            : TextButton(
+                onPressed: onPressed,
+                child: MyText.bold(
+                  text,
+                  color: color,
+                )),
       ],
     );
   }
