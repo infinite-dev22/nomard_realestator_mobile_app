@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_property/chat/presentation/widget/chat_item.dart';
 
 import '../../../global/data/model/property_model.dart';
@@ -138,7 +139,7 @@ class ChatLayout extends StatelessWidget {
     return ListView.separated(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       itemCount: chats.length,
-      itemBuilder: (context, index) => ChatItem(chats[index]),
+      itemBuilder: (context, index) => ChatItem(chats[index],onTap: () => GoRouter.of(context).pushNamed("chat_room"),),
       separatorBuilder: (BuildContext context, int index) =>
       const SizedBox(height: 16),
     );
