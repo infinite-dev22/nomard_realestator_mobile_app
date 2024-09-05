@@ -13,6 +13,7 @@ import 'package:real_estate_property/global/presentation/theming/theme.dart';
 import 'package:real_estate_property/home/presentation/pages/featured/presentation/pages/featured.dart';
 import 'package:real_estate_property/home/presentation/pages/home.dart';
 import 'package:real_estate_property/home/presentation/pages/nearby_location/presentation/pages/nearby_location.dart';
+import 'package:real_estate_property/notifications/presentation/pages/notifications.dart';
 import 'package:real_estate_property/payment/presentation/pages/add_card/presentation/pages/add_card.dart';
 import 'package:real_estate_property/payment/presentation/pages/payment_methods.dart';
 import 'package:real_estate_property/payment/presentation/pages/review_summary/presentation/pages/review_summary.dart';
@@ -139,6 +140,11 @@ GoRouter _router = GoRouter(
       name: 'ticket',
       path: "/ticket",
       builder: (context, state) => const Ticket(),
+    ),
+    GoRoute(
+      name: 'notification',
+      path: "/notification",
+      builder: (context, state) => const Notifications(),
     ),
     ShellRoute(
       navigatorKey: _shellNavigatorKey,
