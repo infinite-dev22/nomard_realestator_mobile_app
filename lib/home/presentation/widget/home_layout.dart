@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_property/global/data/model/property_model.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_linked_text.dart';
 
-import '../../../global/presentation/widget/icon_holders/my_round_icon.dart';
+import '../../../global/presentation/widget/carousels/my_carousel.dart';
 import '../../../global/presentation/widget/property_card/my_property_card.dart';
-import '../../../global/presentation/widget/text_fields/my_text_field.dart';
-import 'home_app_bar.dart';
 
 class HomeLayout extends StatelessWidget {
   const HomeLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    final carouselController = PageController(viewportFraction: 0.7);
     var properties = List<PropertyModel>.of(
       [
         PropertyModel(
@@ -98,135 +98,108 @@ class HomeLayout extends StatelessWidget {
             true),
       ],
     );
-
-    return SingleChildScrollView(
-      child: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) => Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.all(16),
-              child: const HomeAppBar(),
+    var _widgets = <Widget>[
+      Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: MyLinkedText.header(
+              "Featured",
+              "See all",
+              color: Theme.of(context).colorScheme.primary,
+              onPressed: () => GoRouter.of(context).pushNamed("featured"),
             ),
-            Padding(
-              padding: EdgeInsets.all(16),
-              child: LayoutBuilder(
-                builder: (BuildContext context, BoxConstraints constraints) =>
-                    Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: constraints.maxWidth * .88,
-                      child: const MyTextField(
-                        hint: "Search",
-                        prefixIcon: Icon(MingCute.search_2_fill),
-                      ),
-                    ),
-                    MyRoundIcon.small(
-                      icon: MingCute.settings_6_line,
-                      radius: 10,
-                      elevated: false,
-                      backgroundColor: Theme.of(context).colorScheme.primary,
-                      iconColor: Colors.white,
-                    ),
-                  ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 16,
+            ),
+            child: SizedBox(
+              height: 320,
+              child: MyCarousel(
+                children: List.generate(
+                  properties.length,
+                  (index) => Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: MyPropertyCard(properties[index],
+                        width: size.width * .7),
+                  ),
                 ),
               ),
             ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: MyLinkedText.header(
-                    "Featured",
-                    "See all",
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.only(
-                    left: 8,
-                    top: 16,
-                    bottom: 16,
-                  ),
-                  child: Row(
-                    children:
-                        List<Widget>.generate(properties.length, (int index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: MyPropertyCard(properties[index],
-                            width: constraints.maxWidth * .7),
-                      );
-                    }),
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: MyLinkedText.header(
-                    "Nearby Location",
-                    "See all",
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.only(
-                    left: 8,
-                    top: 16,
-                    bottom: 16,
-                  ),
-                  child: Row(
-                    children:
-                        List<Widget>.generate(properties.length, (int index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: MyPropertyCard(properties[index],
-                            width: constraints.maxWidth * .7),
-                      );
-                    }),
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: MyLinkedText.header(
-                    "Recommended Property",
-                    "See all",
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.only(
-                    left: 8,
-                    top: 16,
-                    bottom: 16,
-                  ),
-                  child: Row(
-                    children:
-                        List<Widget>.generate(properties.length, (int index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: MyPropertyCard(properties[index],
-                            width: constraints.maxWidth - 30),
-                      );
-                    }),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 30),
-          ],
-        ),
+          ),
+        ],
       ),
+      Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: MyLinkedText.header(
+              "Nearby Location",
+              "See all",
+              color: Theme.of(context).colorScheme.primary,
+              onPressed: () => GoRouter.of(context).pushNamed("near_by"),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 16,
+            ),
+            child: SizedBox(
+              height: 320,
+              child: MyCarousel(
+                children: List.generate(
+                  properties.length,
+                  (index) => Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: MyPropertyCard(properties[index],
+                        width: size.width * .7),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: MyLinkedText.header(
+              "Recommended Property",
+              "See all",
+              color: Theme.of(context).colorScheme.primary,
+              onPressed: () => GoRouter.of(context).pushNamed("recommended"),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 16,
+            ),
+            child: SizedBox(
+              height: 320,
+              child: MyCarousel(viewPortFraction: .98,
+                children: List.generate(
+                  properties.length,
+                  (index) => Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: MyPropertyCard(properties[index],
+                        width: size.width * .7),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    ];
+
+    return ListView.separated(
+      padding: const EdgeInsets.only(top: 30),
+      itemCount: _widgets.length,
+      itemBuilder: (context, index) => _widgets[index],
+      separatorBuilder: (BuildContext context, int index) =>
+          const SizedBox(height: 16),
     );
   }
 }

@@ -18,6 +18,7 @@ class HomeAppBar extends StatelessWidget {
             const SizedBox(width: 16),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 MyText.bold("Hi, Owen Levi"),
                 MyText.caption(
