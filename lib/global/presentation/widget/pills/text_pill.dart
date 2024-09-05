@@ -16,7 +16,7 @@ class TextPill extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
       ),
       child: Center(
-        child: MyText.regular(
+        child: MyText.caption(
           text,
           color: Theme.of(context).colorScheme.primary,
         ),

@@ -21,13 +21,15 @@ class MyPropertyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      elevation: 16,shadowColor: Theme.of(context).colorScheme.shadow,borderRadius: BorderRadius.circular(8),
+      elevation: 16,
+      shadowColor: Theme.of(context).colorScheme.shadow,
+      borderRadius: BorderRadius.circular(16),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 350),
         width: width ?? double.infinity,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(16),
           color: Theme.of(context).colorScheme.surface,
         ),
         child: Column(

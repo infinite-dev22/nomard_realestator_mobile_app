@@ -23,10 +23,10 @@ class IconTextPill extends StatelessWidget {
             const Icon(
               Icons.star,
               color: Colors.amber,
-              size: 20,
+              size: 16,
             ),
             const SizedBox(width: 5),
-            MyText.regular(
+            MyText.caption(
               text,
               color: Theme.of(context).colorScheme.primary,
             ),

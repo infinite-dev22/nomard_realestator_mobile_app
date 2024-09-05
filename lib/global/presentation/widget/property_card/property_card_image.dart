@@ -55,24 +55,28 @@ class PropertyCardImage extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 1,
-              right: 1,
-              child: IconButton(
-                  onPressed: () => blocContext.read<PropertyCardBloc>().add(LikeEvent(!state.like)),
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(
-                      Theme.of(context).colorScheme.surface.withOpacity(.8),
+              top: 16,
+              right: 16,
+              child: SizedBox(
+                height: 35,
+                width: 35,
+                child: IconButton(
+                    onPressed: () => blocContext.read<PropertyCardBloc>().add(LikeEvent(!state.like)),
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll(
+                        Theme.of(context).colorScheme.surface.withOpacity(.8),
+                      ),
                     ),
-                  ),
-                  icon: Icon(
-                    (state.like == false)
-                        ? Icons.favorite
-                        : Icons.favorite_border_outlined,
-                    color: (state.like == false)
-                        ? Colors.red
-                        : Theme.of(context).colorScheme.primary,
-                    size: 24,
-                  )),
+                    icon: Icon(
+                      (state.like == false)
+                          ? Icons.favorite
+                          : Icons.favorite_border_outlined,
+                      color: (state.like == false)
+                          ? Colors.red
+                          : Theme.of(context).colorScheme.primary,
+                      size: 16,
+                    )),
+              ),
             ),
           ],
         );

@@ -41,9 +41,9 @@ class PropertyCardDetails extends StatelessWidget {
                 IconTextPill(propertyModel.rating.toString()),
               ],
             ),
-            const SizedBox(height: 4),
+            const SizedBox(height: 8),
             MyText.bold(propertyModel.name),
-            const SizedBox(height: 4),
+            const SizedBox(height: 8),
             (large)
                 ? Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,7 +62,7 @@ class PropertyCardDetails extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: 8),
                       Row(
                         children: [
                           MyText.regular(
@@ -95,7 +95,7 @@ class PropertyCardDetails extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: 8),
                       Row(
                         children: [
                           MyText.regular(
