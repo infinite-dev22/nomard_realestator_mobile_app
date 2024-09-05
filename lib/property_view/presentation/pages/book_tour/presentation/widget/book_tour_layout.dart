@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/global/presentation/widget/text_fields/my_text_field.dart';
-import 'package:real_estate_property/global/presentation/widget/tiles/my_tile.dart';
 
 import '../../../../../../../../../global/presentation/widget/buttons/my_button.dart';
 
@@ -41,9 +41,8 @@ class BookTourLayout extends StatelessWidget {
           flex: 2,
           child: Center(
             child: MyButton(
-              text: "Continue",
-              onTap: () {},
-            ),
+                text: "Continue",
+                onTap: () => GoRouter.of(context).pushNamed("summary")),
           ),
         ),
       ],

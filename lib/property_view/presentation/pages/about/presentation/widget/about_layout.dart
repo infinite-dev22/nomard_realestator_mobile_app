@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 import 'package:real_estate_property/global/presentation/widget/buttons/my_button.dart';
@@ -46,7 +47,8 @@ class AboutLayout extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: List.generate(
               _facilities1.length,
               (index) => FacilityItem.inline(_facilities1[index]),
@@ -136,7 +138,11 @@ class AboutLayout extends StatelessWidget {
                   ),
                 ],
               ),
-              MyButton(text: "Book Now", width: size.width * .5, onTap: () {}),
+              MyButton(
+                text: "Book Now",
+                width: size.width * .5,
+                onTap: () => GoRouter.of(context).pushNamed("book"),
+              ),
             ],
           ),
           const SizedBox(height: 30),

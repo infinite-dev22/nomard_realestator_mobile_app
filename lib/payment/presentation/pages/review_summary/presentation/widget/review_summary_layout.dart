@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 import 'package:real_estate_property/global/presentation/widget/buttons/my_button.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_linked_text.dart';
@@ -60,7 +61,7 @@ class ReviewSummaryLayout extends StatelessWidget {
           child: Center(
             child: MyButton(
               text: "Continue",
-              onTap: () {},
+              onTap: () => GoRouter.of(context).pushNamed("ticket"),
             ),
           ),
         ),

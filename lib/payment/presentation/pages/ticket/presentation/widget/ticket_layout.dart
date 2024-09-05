@@ -1,32 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 import 'package:real_estate_property/global/presentation/widget/buttons/my_button.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_linked_text.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_titled_text.dart';
 
-import '../../../../../../global/data/model/property_model.dart';
-
 class TicketLayout extends StatelessWidget {
   const TicketLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var property = PropertyModel(
-      List<String>.of([
-        "assets/images/house_1.jpg",
-        "assets/images/house_1.jpg",
-        "assets/images/house_1.jpg",
-        "assets/images/house_1.jpg"
-      ]),
-      "name",
-      "type",
-      "location",
-      "month",
-      19000.0,
-      5.0,
-      true,
-    );
     var widgets = <Widget>[
       Container(
         height: 100,
@@ -36,7 +20,10 @@ class TicketLayout extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         child: Center(
-          child: MyText.regular("Your Barcode Here", color: secondaryLightest,),
+          child: MyText.regular(
+            "Your Barcode Here",
+            color: secondaryLightest,
+          ),
         ),
       ),
       const Divider(
@@ -107,7 +94,14 @@ class TicketLayout extends StatelessWidget {
           child: Center(
             child: MyButton(
               text: "Download",
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).pop();
+                GoRouter.of(context).pop();
+                GoRouter.of(context).pop();
+                GoRouter.of(context).pop();
+                GoRouter.of(context).pop();
+                GoRouter.of(context).pop();
+              },
             ),
           ),
         ),

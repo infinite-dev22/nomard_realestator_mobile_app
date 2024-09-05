@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_any_logo/flutter_logo.dart';
+import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
+import 'package:real_estate_property/global/presentation/widget/buttons/my_button.dart';
 import 'package:real_estate_property/global/presentation/widget/tiles/my_tile.dart';
-
-import '../../../global/presentation/widget/buttons/my_button.dart';
 
 class PaymentMethodsLayout extends StatelessWidget {
   const PaymentMethodsLayout({super.key});
@@ -15,22 +15,22 @@ class PaymentMethodsLayout extends StatelessWidget {
       MyTile.raised(
         icon: FontAwesome.money_bill_1,
         text: "Cash",
-        onTap: () {},
+        onTap: () => GoRouter.of(context).pushNamed("schedule"),
       ),
       MyTile.raised(
         widget: AnyLogo.tech.paypal.image(width: 25, height: 25),
         text: "PayPal",
-        onTap: () {},
+        onTap: () => GoRouter.of(context).pushNamed("schedule"),
       ),
       MyTile.raised(
         widget: AnyLogo.tech.masterCard.image(width: 25, height: 25),
         text: "MasterCard",
-        onTap: () {},
+        onTap: () => GoRouter.of(context).pushNamed("schedule"),
       ),
       MyTile.raised(
         widget: AnyLogo.tech.apple.image(width: 25, height: 25),
         text: "Apple Pay",
-        onTap: () {},
+        onTap: () => GoRouter.of(context).pushNamed("schedule"),
       ),
     ];
 
@@ -50,9 +50,12 @@ class PaymentMethodsLayout extends StatelessWidget {
           flex: 2,
           child: Center(
             child: MyButton(
-              widget: const Icon(Icons.add, color: secondaryLight,),
+              widget: const Icon(
+                Icons.add,
+                color: secondaryLight,
+              ),
               text: "Add Card",
-              onTap: () {},
+              onTap: () => GoRouter.of(context).pushNamed("add_card"),
             ),
           ),
         ),

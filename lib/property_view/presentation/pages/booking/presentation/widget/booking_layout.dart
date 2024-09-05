@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_property/global/presentation/widget/tiles/my_tile.dart';
 
 class BookingLayout extends StatelessWidget {
@@ -9,15 +10,15 @@ class BookingLayout extends StatelessWidget {
     var widgets = <Widget>[
       MyTile.raised(
         text: "Buy Property",
-        onTap: () {},
+        onTap: () => GoRouter.of(context).pushNamed("payments"),
       ),
       MyTile.raised(
         text: "Rent Property",
-        onTap: () {},
+        onTap: () => GoRouter.of(context).pushNamed("payments"),
       ),
       MyTile.raised(
         text: "Property Tour",
-        onTap: () {},
+        onTap: () => GoRouter.of(context).pushNamed("payments"),
       ),
     ];
 

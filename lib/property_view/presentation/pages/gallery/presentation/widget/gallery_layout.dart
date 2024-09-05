@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 import 'package:real_estate_property/global/presentation/widget/buttons/my_button.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
@@ -100,7 +101,11 @@ class GalleryLayout extends StatelessWidget {
                   ),
                 ],
               ),
-              MyButton(text: "Book Now", width: size.width * .5, onTap: () {}),
+              MyButton(
+                text: "Book Now",
+                width: size.width * .5,
+                onTap: () => GoRouter.of(context).pushNamed("book"),
+              ),
             ],
           ),
         ],
