@@ -37,9 +37,9 @@ class Favorite extends StatelessWidget {
           ),
         ],
         bottom: PreferredSize(
-          preferredSize: const Size(double.infinity, 60),
+          preferredSize: const Size(double.infinity, 70),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
