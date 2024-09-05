@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
-import 'package:real_estate_property/global/presentation/widget/buttons/my_back_button.dart';
 import 'package:real_estate_property/global/presentation/widget/icon_holders/my_round_icon.dart';
 import 'package:real_estate_property/global/presentation/widget/property_card/my_property_card.dart';
 import 'package:real_estate_property/global/presentation/widget/text_fields/my_text_field.dart';
@@ -47,16 +45,8 @@ class ExploreLayout extends StatelessWidget {
           top: 30,
           left: 8,
           right: 8,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              MyBackButton(
-                onTap: () => GoRouter.of(context).pop(),
-              ),
-              MyText.h2("Explore"),
-              const SizedBox(width: 60),
-            ],
+          child: Center(
+            child: MyText.h2("Explore"),
           ),
         ),
         Positioned(
