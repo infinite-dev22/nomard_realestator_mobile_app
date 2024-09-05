@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         title: const HomeAppBar(),
-        titleTextStyle: TextStyle(fontSize: 16),
+        titleTextStyle: const TextStyle(fontSize: 16),
         centerTitle: true,
         bottom: PreferredSize(
           preferredSize: const Size(double.infinity, 65),
@@ -45,7 +45,7 @@ class Home extends StatelessWidget {
           ),
         ),
       ),
-      body: HomeLayout(),
+      body: const HomeLayout(),
     );
   }
 }

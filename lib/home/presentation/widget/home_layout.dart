@@ -12,7 +12,6 @@ class HomeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    final carouselController = PageController(viewportFraction: 0.7);
     var properties = List<PropertyModel>.of(
       [
         PropertyModel(
@@ -115,7 +114,7 @@ class HomeLayout extends StatelessWidget {
               top: 16,
             ),
             child: SizedBox(
-              height: 320,
+              height: 335,
               child: MyCarousel(
                 children: List.generate(
                   properties.length,
@@ -146,7 +145,7 @@ class HomeLayout extends StatelessWidget {
               top: 16,
             ),
             child: SizedBox(
-              height: 320,
+              height: 335,
               child: MyCarousel(
                 children: List.generate(
                   properties.length,
@@ -177,7 +176,7 @@ class HomeLayout extends StatelessWidget {
               top: 16,
             ),
             child: SizedBox(
-              height: 320,
+              height: 335,
               child: MyCarousel(viewPortFraction: .98,
                 children: List.generate(
                   properties.length,
