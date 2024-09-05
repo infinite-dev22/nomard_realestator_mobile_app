@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:real_estate_property/global/presentation/widget/icon_holders/my_round_icon.dart';
+import 'package:go_router/go_router.dart';
+import 'package:real_estate_property/global/presentation/widget/buttons/my_notification_button.dart';
 import 'package:real_estate_property/global/presentation/widget/images/user_profile_image.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
 
@@ -29,16 +30,8 @@ class HomeAppBar extends StatelessWidget {
             ),
           ],
         ),
-        Badge(
-          label: MyText.caption(
-            "5",
-            color: Colors.white,
-          ),
-          backgroundColor: Theme.of(context).colorScheme.primary,
-          child: const MyRoundIcon.small(
-            icon: Icons.notifications_none_rounded,
-            elevated: true,
-          ),
+        MyNotificationButton(
+          onTap: () => GoRouter.of(context).pushNamed("notification"),
         ),
       ],
     );

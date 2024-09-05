@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/global/presentation/widget/buttons/my_back_button.dart';
+import 'package:real_estate_property/global/presentation/widget/buttons/my_notification_button.dart';
 import 'package:real_estate_property/global/presentation/widget/icon_holders/my_round_icon.dart';
 import 'package:real_estate_property/global/presentation/widget/text_fields/my_text_field.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
@@ -22,19 +23,8 @@ class NearByLocation extends StatelessWidget {
           ),
           title: MyText.h2("NearBy Location"),
           actions: [
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Badge(
-                label: MyText.caption(
-                  "5",
-                  color: Colors.white,
-                ),
-                backgroundColor: Theme.of(context).colorScheme.primary,
-                child: const MyRoundIcon.small(
-                  icon: Icons.notifications_none_rounded,
-                  elevated: true,
-                ),
-              ),
+            MyNotificationButton(
+              onTap: () => GoRouter.of(context).pushNamed("notification"),
             ),
           ],
           bottom: PreferredSize(
