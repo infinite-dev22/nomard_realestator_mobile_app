@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 import 'package:real_estate_property/global/presentation/widget/icon_holders/my_round_icon.dart';
@@ -45,9 +46,17 @@ class ExploreLayout extends StatelessWidget {
           top: 30,
           left: 8,
           right: 8,
-          child: Center(
-            child: MyText.h2("Explore"),
-          ),
+          child: (GoRouter.of(context).canPop() == true)
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    MyText.h2("Explore"),
+                  ],
+                )
+              : Center(
+                  child: MyText.h2("Explore"),
+                ),
         ),
         Positioned(
           top: 110,

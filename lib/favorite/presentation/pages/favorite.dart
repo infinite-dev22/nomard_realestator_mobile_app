@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/favorite/presentation/widget/favorite_layout.dart';
 import 'package:real_estate_property/global/presentation/widget/buttons/my_back_button.dart';
@@ -14,11 +15,11 @@ class Favorite extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        leading: Builder(
-          builder: (context) => MyBackButton(
-            onTap: () {},
-          ),
-        ),
+        leading: (GoRouter.of(context).canPop() == true)
+            ? MyBackButton(
+                onTap: () => GoRouter.of(context).pop(),
+              )
+            : null,
         title: MyText.h2("Favorite"),
         actions: [
           Padding(
