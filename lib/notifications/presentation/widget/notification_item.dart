@@ -17,54 +17,51 @@ class NotificationItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surface,
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: Theme.of(context).colorScheme.shadow.withOpacity(.1),
-            spreadRadius: 1,
-            blurRadius: .1,
-            offset: const Offset(0, 1), // changes position of shadow
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          MyRoundIcon.medium(
-            icon: notification.icon,
-            backgroundColor: notification.backgroundColor,
-            iconColor: Colors.white,
-          ),
-          const SizedBox(width: 20),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              MyText.bold(notification.title),
-              MyText.small(
-                notification.bodyPreview,
-                color: secondary,
-              ),
-              Row(
-                children: [
-                  const Icon(
-                    Icons.access_time,
-                    color: secondary,
-                    size: 15,
-                  ),
-                  const SizedBox(width: 10),
-                  MyText.caption(
-                    "${notification.time} Ago",
-                    color: secondary,
-                  ),
-                ],
-              ),
-            ],
-          )
-        ],
+    return Material(
+      shadowColor: Theme.of(context).colorScheme.shadow,
+      borderRadius: const BorderRadius.all(Radius.circular(16)),
+      elevation: 8,
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.surface,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Row(
+          children: [
+            MyRoundIcon.medium(
+              icon: notification.icon,
+              backgroundColor: notification.backgroundColor,
+              iconColor: Colors.white,size: 50,
+            ),
+            const SizedBox(width: 20),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                MyText.bold(notification.title),
+                MyText.small(
+                  notification.bodyPreview,
+                  color: secondary,
+                ),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.access_time,
+                      color: secondary,
+                      size: 15,
+                    ),
+                    const SizedBox(width: 10),
+                    MyText.caption(
+                      "${notification.time} Ago",
+                      color: secondary,
+                    ),
+                  ],
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

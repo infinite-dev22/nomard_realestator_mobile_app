@@ -1,22 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:real_estate_property/global/data/model/property_model.dart';
-import 'package:real_estate_property/notifications/data/model/notification_model.dart';
-import 'package:real_estate_property/notifications/data/model/notification_model.dart';
-import 'package:real_estate_property/notifications/data/model/notification_model.dart';
-import 'package:real_estate_property/notifications/data/model/notification_model.dart';
-import 'package:real_estate_property/notifications/data/model/notification_model.dart';
-import 'package:real_estate_property/notifications/data/model/notification_model.dart';
-import 'package:real_estate_property/notifications/data/model/notification_model.dart';
-import 'package:real_estate_property/notifications/data/model/notification_model.dart';
-import 'package:real_estate_property/notifications/data/model/notification_model.dart';
+import 'package:real_estate_property/global/presentation/widget/icon_holders/my_round_icon.dart';
+import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
 import 'package:real_estate_property/notifications/data/model/notification_model.dart';
 import 'package:real_estate_property/notifications/presentation/widget/notification_item.dart';
-
-import '../../../../../../global/presentation/widget/icon_holders/my_round_icon.dart';
-import '../../../../../../global/presentation/widget/property_card/my_property_card.dart';
-import '../../../../../../global/presentation/widget/text_fields/my_text_field.dart';
-import '../../../../../../global/presentation/widget/texts/my_text.dart';
 
 class NotificationsLayout extends StatelessWidget {
   const NotificationsLayout({super.key});
@@ -58,36 +45,12 @@ class NotificationsLayout extends StatelessWidget {
       ],
     );
 
-    var size = MediaQuery.of(context).size;
-
-    return CustomScrollView(
-      slivers: [
-        SliverPadding(
-          padding: EdgeInsets.only(bottom: 16),
-          sliver: SliverAppBar(
-            centerTitle: true,
-            pinned: true,
-            forceElevated: true,
-            leading: const MyRoundIcon.small(
-              icon: Icons.arrow_back,
-              elevated: true,
-            ),
-            title: MyText.h2("Notifications"),
-          ),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
-          sliver: SliverList(
-            delegate: SliverChildBuilderDelegate(
-              childCount: notifications.length,
-              (context, index) => Padding(
-                padding: EdgeInsets.symmetric(vertical: 8),
-                child: NotificationItem(notifications[index]),
-              ),
-            ),
-          ),
-        ),
-      ],
+    return ListView.separated(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      itemCount: notifications.length,
+      itemBuilder: (context, index) => NotificationItem(notifications[index]),
+      separatorBuilder: (BuildContext context, int index) =>
+      const SizedBox(height: 16),
     );
   }
 }
