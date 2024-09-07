@@ -34,19 +34,28 @@ class Featured extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * .74,
-                  child: const MyTextField(
-                    hint: "Search",
-                    prefixIcon: Icon(MingCute.search_2_fill),
+                GestureDetector(
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width * .8,
+                    child: const MyTextField(
+                      hint: "Search",
+                      prefixIcon: Icon(MingCute.search_2_fill),
+                      readOnly: true,
+                      disabled: true,
+                    ),
                   ),
+                  onTap: () => GoRouter.of(context).pushNamed("search"),
                 ),
-                MyRoundIcon.small(
-                  icon: MingCute.settings_6_line,
-                  radius: 10,
-                  elevated: false,
-                  backgroundColor: Theme.of(context).colorScheme.primary,
-                  iconColor: Colors.white,
+                GestureDetector(
+                  child: MyRoundIcon.small(
+                    icon: MingCute.settings_6_line,
+                    radius: 10,
+                    size: 50,
+                    elevated: false,
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    iconColor: Colors.white,
+                  ),
+                  onTap: () => GoRouter.of(context).pushNamed("filter"),
                 ),
               ],
             ),

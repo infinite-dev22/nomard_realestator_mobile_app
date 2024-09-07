@@ -8,6 +8,7 @@ class MyTextField extends StatelessWidget {
   final String? purpose;
   final TextEditingController? controller;
   final bool disabled;
+  final bool readOnly;
   final bool obsecure;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
@@ -18,6 +19,7 @@ class MyTextField extends StatelessWidget {
     this.purpose,
     this.controller,
     this.disabled = false,
+    this.readOnly = false,
     this.suffixIcon,
     this.prefixIcon,
   }) : obsecure = false;
@@ -28,6 +30,7 @@ class MyTextField extends StatelessWidget {
     this.purpose,
     this.controller,
     this.disabled = false,
+    this.readOnly = false,
     this.prefixIcon,
   })  : obsecure = true,
         suffixIcon = null;
@@ -43,6 +46,7 @@ class MyTextField extends StatelessWidget {
               controller: controller,
               disabled: disabled,
               prefixIcon: prefixIcon,
+              readOnly: readOnly,
             )
           : MyAbstractTextFiled(
               hint: hint,
@@ -51,6 +55,7 @@ class MyTextField extends StatelessWidget {
               disabled: disabled,
               suffixIcon: suffixIcon,
               prefixIcon: prefixIcon,
+              readOnly: readOnly,
             ),
     );
   }

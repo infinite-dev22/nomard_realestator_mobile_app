@@ -8,11 +8,13 @@ import 'package:real_estate_property/chat/presentation/pages/chat.dart';
 import 'package:real_estate_property/chat/presentation/pages/chat_room/presentation/pages/chat_room.dart';
 import 'package:real_estate_property/explore/presentation/pages/explore.dart';
 import 'package:real_estate_property/favorite/presentation/pages/favorite.dart';
-import 'package:real_estate_property/global/presentation/pages/search/presentation/pages/filter/presentation/pages/recommended_properties.dart';
+import 'package:real_estate_property/global/presentation/pages/filter/presentation/pages/filter.dart';
+import 'package:real_estate_property/global/presentation/pages/search/presentation/pages/search.dart';
 import 'package:real_estate_property/global/presentation/theming/theme.dart';
 import 'package:real_estate_property/home/presentation/pages/featured/presentation/pages/featured.dart';
 import 'package:real_estate_property/home/presentation/pages/home.dart';
 import 'package:real_estate_property/home/presentation/pages/nearby_location/presentation/pages/nearby_location.dart';
+import 'package:real_estate_property/home/presentation/pages/recommended_properties/presentation/pages/recommended_properties.dart';
 import 'package:real_estate_property/notifications/presentation/pages/notifications.dart';
 import 'package:real_estate_property/payment/presentation/pages/add_card/presentation/pages/add_card.dart';
 import 'package:real_estate_property/payment/presentation/pages/payment_methods.dart';
@@ -145,6 +147,16 @@ GoRouter _router = GoRouter(
       name: 'notification',
       path: "/notification",
       builder: (context, state) => const Notifications(),
+    ),
+    GoRoute(
+      name: 'search',
+      path: "/search",
+      builder: (context, state) => const Search(),
+    ),
+    GoRoute(
+      name: 'filter',
+      path: "/filter",
+      builder: (context, state) => const Filter(),
     ),
     ShellRoute(
       navigatorKey: _shellNavigatorKey,

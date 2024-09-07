@@ -11,6 +11,7 @@ class MyAbstractTextFiled extends StatelessWidget {
   final TextEditingController? controller;
   final bool disabled;
   final bool obsecure;
+  final bool readOnly;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
 
@@ -20,6 +21,7 @@ class MyAbstractTextFiled extends StatelessWidget {
     this.purpose,
     this.controller,
     this.disabled = false,
+    this.readOnly = false,
     this.suffixIcon,
     this.prefixIcon,
   }) : obsecure = false;
@@ -30,6 +32,7 @@ class MyAbstractTextFiled extends StatelessWidget {
     this.purpose,
     this.controller,
     this.disabled = false,
+    this.readOnly = false,
     this.prefixIcon,
   })  : obsecure = true,
         suffixIcon = null;
@@ -45,6 +48,7 @@ class MyAbstractTextFiled extends StatelessWidget {
         }
         return TextFormField(
           enabled: !disabled,
+          readOnly: readOnly,
           controller: controller,
           obscureText: state.obsecure,
           decoration: InputDecoration(

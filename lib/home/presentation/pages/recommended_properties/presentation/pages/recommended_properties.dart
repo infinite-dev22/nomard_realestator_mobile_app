@@ -7,9 +7,10 @@ import 'package:real_estate_property/global/presentation/widget/icon_holders/my_
 import 'package:real_estate_property/global/presentation/widget/text_fields/my_text_field.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
 import 'package:real_estate_property/home/presentation/pages/nearby_location/presentation/widget/nearby_location_layout.dart';
+import 'package:real_estate_property/home/presentation/pages/recommended_properties/presentation/widget/recommended_properties_layout.dart';
 
-class NearByLocation extends StatelessWidget {
-  const NearByLocation({super.key});
+class RecommendedProperties extends StatelessWidget {
+  const RecommendedProperties({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class NearByLocation extends StatelessWidget {
               onTap: () => GoRouter.of(context).pop(),
             ),
           ),
-          title: MyText.h2("NearBy Location"),
+          title: MyText.h2("Recommended Properties"),
           actions: [
             MyNotificationButton(
               onTap: () => GoRouter.of(context).pushNamed("notification"),
@@ -63,6 +64,6 @@ class NearByLocation extends StatelessWidget {
             ),
           ),
         ),
-        body: const NearByLocationLayout());
+        body: const RecommendedPropertiesLayout());
   }
 }
