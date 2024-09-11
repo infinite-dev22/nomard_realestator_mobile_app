@@ -19,7 +19,7 @@ class SignUp extends StatelessWidget {
               )
             : null,
         bottom: PreferredSize(
-          preferredSize: const Size(double.infinity, 100),
+          preferredSize: const Size(double.infinity, 40),
           child: Center(
             child: Column(
               children: [

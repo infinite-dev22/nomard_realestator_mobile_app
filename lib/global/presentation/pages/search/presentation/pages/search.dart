@@ -29,18 +29,22 @@ class Search extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * .74,
+                  width: MediaQuery.of(context).size.width * .8,
                   child: const MyTextField(
                     hint: "Search",
                     prefixIcon: Icon(MingCute.search_2_fill),
                   ),
                 ),
-                MyRoundIcon.small(
-                  icon: MingCute.settings_6_line,
-                  radius: 10,
-                  elevated: false,
-                  backgroundColor: Theme.of(context).colorScheme.primary,
-                  iconColor: Colors.white,
+                GestureDetector(
+                  child: MyRoundIcon.small(
+                    icon: MingCute.settings_6_line,
+                    radius: 10,
+                    size: 50,
+                    elevated: false,
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    iconColor: Colors.white,
+                  ),
+                  onTap: () => GoRouter.of(context).pushNamed("filter"),
                 ),
               ],
             ),
