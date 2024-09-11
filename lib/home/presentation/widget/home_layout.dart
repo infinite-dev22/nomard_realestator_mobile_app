@@ -111,21 +111,19 @@ class HomeLayout extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              top: 16,
+              top: 8,
             ),
             child: SizedBox(
-              height: 335,
-              child: MyCarousel(
-                children: List.generate(
-                  properties.length,
-                  (index) => Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: MyPropertyCard(
-                      properties[index],
-                      width: size.width * .7,
-                      onTap: () =>
-                          GoRouter.of(context).pushNamed("property_view"),
-                    ),
+              height: 320,
+              child: MyCarousel3(
+                itemCount: properties.length,
+                itemBuilder: (BuildContext context, int index) =>Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: MyPropertyCard(
+                    properties[index],
+                    width: size.width * .7,
+                    onTap: () =>
+                        GoRouter.of(context).pushNamed("property_view"),
                   ),
                 ),
               ),
@@ -146,21 +144,19 @@ class HomeLayout extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              top: 16,
+              top: 8,
             ),
             child: SizedBox(
-              height: 335,
-              child: MyCarousel(
-                children: List.generate(
-                  properties.length,
-                  (index) => Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: MyPropertyCard(
-                      properties[index],
-                      width: size.width * .7,
-                      onTap: () =>
-                          GoRouter.of(context).pushNamed("property_view"),
-                    ),
+              height: 320,
+              child: MyCarousel3(
+                itemCount: properties.length,
+                itemBuilder: (BuildContext context, int index) =>Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: MyPropertyCard(
+                    properties[index],
+                    width: size.width * .7,
+                    onTap: () =>
+                        GoRouter.of(context).pushNamed("property_view"),
                   ),
                 ),
               ),
@@ -181,22 +177,19 @@ class HomeLayout extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              top: 16,
+              top: 8  ,
             ),
             child: SizedBox(
-              height: 335,
-              child: MyCarousel(
-                viewPortFraction: .98,
-                children: List.generate(
-                  properties.length,
-                  (index) => Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: MyPropertyCard(
-                      properties[index],
-                      width: size.width * .7,
-                      onTap: () =>
-                          GoRouter.of(context).pushNamed("property_view"),
-                    ),
+              height: 320,
+              child: MyCarousel3(
+                itemCount: properties.length,
+                itemBuilder: (BuildContext context, int index) =>Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: MyPropertyCard(
+                    properties[index],
+                    width: size.width * .7,
+                    onTap: () =>
+                        GoRouter.of(context).pushNamed("property_view"),
                   ),
                 ),
               ),
@@ -206,12 +199,15 @@ class HomeLayout extends StatelessWidget {
       ),
     ];
 
-    return ListView.separated(
-      padding: const EdgeInsets.only(top: 30),
-      itemCount: _widgets.length,
-      itemBuilder: (context, index) => _widgets[index],
-      separatorBuilder: (BuildContext context, int index) =>
-          const SizedBox(height: 16),
+    return Container(
+      color: Colors.transparent,
+      child: ListView.separated(
+        padding: const EdgeInsets.only(top: 30),
+        itemCount: _widgets.length,
+        itemBuilder: (context, index) => _widgets[index],
+        separatorBuilder: (BuildContext context, int index) =>
+            const SizedBox(height: 16),
+      ),
     );
   }
 }

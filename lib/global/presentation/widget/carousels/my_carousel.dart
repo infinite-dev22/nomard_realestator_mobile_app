@@ -143,6 +143,31 @@ class MyCarousel3 extends StatelessWidget {
       itemCount: itemCount,
       itemBuilder: itemBuilder,
       padEnds: false,
+      pageSnapping: true,
+      clipBehavior: Clip.none,
+    );
+  }
+}
+
+class MyScrollView extends StatelessWidget {
+  final double viewPortFraction;
+  final int itemCount;
+  final Widget? Function(BuildContext context, int index) itemBuilder;
+
+  const MyScrollView({
+    super.key,
+    required this.itemCount,
+    required this.itemBuilder,
+    this.viewPortFraction = 0.74,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return PageView.builder(
+      controller: PageController(viewportFraction: viewPortFraction),
+      itemCount: itemCount,
+      itemBuilder: itemBuilder,
+      padEnds: false,
     );
   }
 }
