@@ -17,12 +17,12 @@ class EditProfileLayout extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           const UserProfileImage(
-            "assets/images/house_1.jpg",
+            "assets/images/profile.jpg",
             size: 100,
           ),
           Positioned(
             bottom: 5,
-            right: 170,
+            right: 160,
             child: SizedBox(
               height: 30,
               width: 30,

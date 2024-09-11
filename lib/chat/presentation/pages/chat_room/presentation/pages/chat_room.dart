@@ -19,7 +19,7 @@ class ChatRoom extends StatelessWidget {
                 onTap: () => GoRouter.of(context).pop(),
               )
             : null,
-        title: MyText.h2("Chat Room Name"),
+        title: MyText.h2("Micheal Angelo"),
         actions: [
           MyAppbarActionsButton(
             icon: MingCute.more_1_line,

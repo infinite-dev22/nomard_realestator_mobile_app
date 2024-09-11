@@ -2,98 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate_property/global/data/model/property_model.dart';
 import 'package:real_estate_property/global/presentation/widget/property_card/my_property_card.dart';
+import 'package:real_estate_property/home/data/repository/nearby_data.dart';
 
 class NearByLocationLayout extends StatelessWidget {
   const NearByLocationLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var properties = List<PropertyModel>.of(
-      [
-        PropertyModel(
-            ["assets/images/house_1.jpg", "assets/images/house_1.jpg"],
-            "A test property",
-            "Mansion",
-            "Location, Located",
-            "Month",
-            1200000,
-            4.9,
-            true),
-        PropertyModel(
-            ["assets/images/house_1.jpg", "assets/images/house_1.jpg"],
-            "A test property",
-            "Mansion",
-            "Location, Located",
-            "Month",
-            1200000,
-            4.9,
-            true),
-        PropertyModel(
-            ["assets/images/house_1.jpg", "assets/images/house_1.jpg"],
-            "A test property",
-            "Mansion",
-            "Location, Located",
-            "Month",
-            1200000,
-            4.9,
-            true),
-        PropertyModel(
-            ["assets/images/house_1.jpg", "assets/images/house_1.jpg"],
-            "A test property",
-            "Mansion",
-            "Location, Located",
-            "Month",
-            1200000,
-            4.9,
-            true),
-        PropertyModel(
-            ["assets/images/house_1.jpg", "assets/images/house_1.jpg"],
-            "A test property",
-            "Mansion",
-            "Location, Located",
-            "Month",
-            1200000,
-            4.9,
-            true),
-        PropertyModel(
-            ["assets/images/house_1.jpg", "assets/images/house_1.jpg"],
-            "A test property",
-            "Mansion",
-            "Location, Located",
-            "Month",
-            1200000,
-            4.9,
-            true),
-        PropertyModel(
-            ["assets/images/house_1.jpg", "assets/images/house_1.jpg"],
-            "A test property",
-            "Mansion",
-            "Location, Located",
-            "Month",
-            1200000,
-            4.9,
-            true),
-        PropertyModel(
-            ["assets/images/house_1.jpg", "assets/images/house_1.jpg"],
-            "A test property",
-            "Mansion",
-            "Location, Located",
-            "Month",
-            1200000,
-            4.9,
-            true),
-        PropertyModel(
-            ["assets/images/house_1.jpg", "assets/images/house_1.jpg"],
-            "A test property",
-            "Mansion",
-            "Location, Located",
-            "Month",
-            1200000,
-            4.9,
-            true),
-      ],
-    );
-
     var size = MediaQuery.of(context).size;
 
     return GridView.builder(
@@ -105,12 +20,12 @@ class NearByLocationLayout extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 16,
           mainAxisSpacing: 16,
-          childAspectRatio: .68),
-      itemCount: properties.length,
+          childAspectRatio: .63),
+      itemCount: nearbyProperties.length,
       itemBuilder: (context, index) => MyPropertyCard(
-        properties[index],
+        nearbyProperties[index],
         width: size.width * .5,
-        onTap: () => GoRouter.of(context).pushNamed("property_view"),
+        onTap: () => GoRouter.of(context).pushNamed("property_view", queryParameters: {"index":index.toString(), "type":"near_by"}),
       ),
     );
   }

@@ -41,7 +41,7 @@ class MyPropertyCard extends StatelessWidget {
               BlocProvider(
                 create: (context) => PropertyCardBloc(),
                 child: PropertyCardImage(
-                  propertyModel.images[1],
+                  propertyModel,
                   width: double.infinity,
                   height: height,
                 ),

@@ -49,7 +49,7 @@ class ChatItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(
-                        width: constraints.maxWidth - 200,
+                        width: constraints.maxWidth - 160,
                         child: MyText.caption(
                           chatItem.messagePreview,
                           color: secondary,

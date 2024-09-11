@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:real_estate_property/global/data/model/property_model.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 import 'package:real_estate_property/global/presentation/widget/buttons/my_button.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
@@ -12,7 +13,9 @@ import 'package:real_estate_property/property_view/presentation/pages/reviews/pr
 import 'package:real_estate_property/property_view/presentation/pages/reviews/presentation/widget/review_card.dart';
 
 class ReviewLayout extends StatelessWidget {
-  const ReviewLayout({super.key});
+  final PropertyModel property;
+
+  const ReviewLayout(this.property, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +47,6 @@ class ReviewLayout extends StatelessWidget {
         4.7,
         "Modal text goes here. Lorem ipsum dolor at areit connectouf adoptouy elif in portainer quayer.",
         true);
-    var size = MediaQuery.of(context).size;
 
     return BlocConsumer<ReviewBloc, ReviewState>(
       listener: (blocContext, state) {

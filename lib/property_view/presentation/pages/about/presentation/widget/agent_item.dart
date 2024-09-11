@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
+import 'package:real_estate_property/global/presentation/widget/images/user_profile_image.dart';
+import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
 import 'package:real_estate_property/property_view/presentation/pages/about/data/model/agent_model.dart';
-
-import '../../../../../../global/presentation/constants/app_colors.dart';
-import '../../../../../../global/presentation/widget/images/user_profile_image.dart';
-import '../../../../../../global/presentation/widget/texts/my_text.dart';
 
 class AgentItem extends StatelessWidget {
   final AgentModel agent;

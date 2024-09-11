@@ -15,7 +15,6 @@ class AbstractMessageItem extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var screenWidth = size.width;
-    var trackProgress = 0.0;
 
     return Row(
       mainAxisAlignment: (message.senderId == 1)
@@ -40,6 +39,7 @@ class AbstractMessageItem extends StatelessWidget {
             ),
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               (message.type == "text")
                   ? MyText.regular(
@@ -47,6 +47,7 @@ class AbstractMessageItem extends StatelessWidget {
                       color: (message.senderId == 1)
                           ? secondaryLight
                           : secondaryDark,
+                      textAlign: TextAlign.start,
                     )
                   : Container(
                       padding: const EdgeInsets.only(top: 10),

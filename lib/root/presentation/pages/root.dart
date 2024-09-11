@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
+import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
 
 class Root extends StatelessWidget {
   final Widget child;
@@ -64,13 +65,20 @@ class Root extends StatelessWidget {
           color: secondaryLightest,
         ),
       ),
-      const NavigationDestination(
+      NavigationDestination(
         label: "Chat",
-        icon: Icon(
-          MingCute.message_4_line,
-          color: secondary,
+        icon: Badge(
+          label: MyText.caption(
+            "4",
+            color: Colors.white,
+          ),
+          backgroundColor: primary,
+          child: const Icon(
+            MingCute.message_4_line,
+            color: secondary,
+          ),
         ),
-        selectedIcon: Icon(
+        selectedIcon: const Icon(
           MingCute.message_4_line,
           color: secondaryLightest,
         ),

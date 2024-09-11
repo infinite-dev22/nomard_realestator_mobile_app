@@ -16,7 +16,7 @@ class ChatRoomLayout extends StatelessWidget {
         MessageModel(
           1,
           2,
-          "Modal text goes here. Lorem ipsum dolor at areit connectouf adoptouy elif in portainer quayer.",
+          "Civibus dictas iuvaret nascetur ad laudem neque aliquid inani disputationi tation",
           true,
           true,
           "9:31",
@@ -25,7 +25,7 @@ class ChatRoomLayout extends StatelessWidget {
         MessageModel(
           2,
           1,
-          "Modal text goes here. Lorem ipsum dolor at areit connectouf adoptouy elif in portainer quayer.",
+          "Dolore ea dolore dapibus veri nibh eu ridens nec homero voluptatum fabulas posuere feugait eget ante hac nam ridiculus",
           true,
           true,
           "9:31",
@@ -34,7 +34,7 @@ class ChatRoomLayout extends StatelessWidget {
         MessageModel(
           1,
           2,
-          "Modal text goes here. Lorem ipsum dolor at areit connectouf adoptouy elif in portainer quayer.",
+          "Maximus volumus qualisque sociis ligula sententiae tale expetendis mnesarchum animal periculis",
           true,
           true,
           "9:31",
@@ -43,7 +43,7 @@ class ChatRoomLayout extends StatelessWidget {
         MessageModel(
           2,
           1,
-          "Modal text goes here. Lorem ipsum dolor at areit connectouf adoptouy elif in portainer quayer.",
+          "Sed quaeque montes partiendo intellegebat signiferumque hinc pertinacia eirmod at habeo ante dolores mediocritatem mus",
           true,
           true,
           "9:31",

@@ -16,7 +16,7 @@ class AboutLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var agent =
-        AgentModel("assets/images/house_1.jpg", "Micheal Angelo", "Owner");
+        AgentModel("assets/images/owner.jpg", "Masello Gonzareze", "Owner");
 
     var _facilities1 = <FacilityModel>[
       FacilityModel(Icons.bed_outlined, "8 Beds"),

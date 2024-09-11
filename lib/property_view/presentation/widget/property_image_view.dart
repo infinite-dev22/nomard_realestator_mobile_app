@@ -29,7 +29,7 @@ class PropertyImageView extends StatelessWidget {
           BlocProvider(
             create: (context) => PropertyImageViewBloc(),
             child: PropertyViewImage(
-              propertyModel.images[1],
+              propertyModel,
               width: double.infinity,
               height: height,
             ),

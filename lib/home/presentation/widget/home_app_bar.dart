@@ -15,15 +15,15 @@ class HomeAppBar extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const UserProfileImage("assets/images/house_1.jpg"),
+            const UserProfileImage("assets/images/profile.jpg"),
             const SizedBox(width: 16),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                MyText.bold("Hi, Owen Levi"),
+                MyText.bold("Hi, Jonathan Mark Mwigo"),
                 MyText.caption(
-                  "New York City, USA",
+                  "Kampala City, Uganda",
                   color: Theme.of(context).colorScheme.primary,
                 ),
               ],

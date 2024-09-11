@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:real_estate_property/global/data/model/property_model.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 
 import '../bloc/property_view/property_view_bloc.dart';
 
 class PropertyViewImage extends StatelessWidget {
-  final String file;
+  final PropertyModel propertyModel;
   final double width;
   final double height;
   final double borderWidth;
@@ -18,7 +19,7 @@ class PropertyViewImage extends StatelessWidget {
   final Function()? onTap;
 
   const PropertyViewImage(
-    this.file, {
+    this.propertyModel, {
     super.key,
     this.width = 100,
     this.height = 100,
@@ -34,9 +35,12 @@ class PropertyViewImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<PropertyImageViewBloc, PropertyImageViewState>(
       listener: (blocContext, state) {
-        // TODO: implement listener
+        if (state.status.isInitial) {
+          blocContext.read<PropertyImageViewBloc>().add(LikeEvent(propertyModel.isFavorite));
+        }
       },
       builder: (blocContext, state) {
+        blocContext.read<PropertyImageViewBloc>().add(LikeEvent(propertyModel.isFavorite));
         return Stack(
           children: [
             GestureDetector(
@@ -47,7 +51,7 @@ class PropertyViewImage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: bgColor,
                   image: DecorationImage(
-                    image: AssetImage(file),
+                    image: AssetImage(propertyModel.images[0]),
                     fit: imageFit,
                   ),
                 ),
@@ -75,7 +79,7 @@ class PropertyViewImage extends StatelessWidget {
               child: Row(
                 children: [
                   IconButton(
-                    onPressed: ()=>showAboutDialog(context: context),
+                    onPressed: () => showAboutDialog(context: context),
                     style: ButtonStyle(
                       backgroundColor: WidgetStatePropertyAll(
                         Theme.of(context).colorScheme.surface.withOpacity(.8),
@@ -98,10 +102,10 @@ class PropertyViewImage extends StatelessWidget {
                       ),
                     ),
                     icon: Icon(
-                      (state.like == false)
+                      (state.like == true)
                           ? Icons.favorite
                           : Icons.favorite_border_outlined,
-                      color: (state.like == false)
+                      color: (state.like)
                           ? Colors.red
                           : Theme.of(context).colorScheme.primary,
                       size: 16,

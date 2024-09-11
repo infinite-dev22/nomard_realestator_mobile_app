@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:real_estate_property/global/data/model/property_model.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 import 'package:real_estate_property/global/presentation/widget/buttons/my_button.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
@@ -7,24 +8,12 @@ import 'package:real_estate_property/property_view/presentation/pages/gallery/pr
 import 'package:real_estate_property/property_view/presentation/pages/gallery/presentation/widget/video/property_video_thumbnail.dart';
 
 class GalleryLayout extends StatelessWidget {
-  const GalleryLayout({super.key});
+  final PropertyModel property;
+
+  const GalleryLayout(this.property, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    var _images = [
-      "assets/images/house_1.jpg",
-      "assets/images/house_1.jpg",
-      "assets/images/house_1.jpg",
-      "assets/images/house_1.jpg",
-      "assets/images/house_1.jpg",
-      "assets/images/house_1.jpg",
-    ];
-    var _videos = [
-      "assets/images/house_1.jpg",
-      "assets/images/house_1.jpg",
-      "assets/images/house_1.jpg",
-    ];
-
     var gridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
         mainAxisSpacing: 10,
@@ -42,7 +31,7 @@ class GalleryLayout extends StatelessWidget {
               MyText.h3("Photo"),
               const SizedBox(width: 8),
               MyText.caption(
-                "(6 Photos)",
+                "(${property.images.length} Photos)",
                 color: secondary,
               ),
             ],
@@ -53,9 +42,9 @@ class GalleryLayout extends StatelessWidget {
             width: double.infinity,
             child: GridView.builder(
               gridDelegate: gridDelegate,
-              itemCount: _images.length,
+              itemCount: property.images.length,
               itemBuilder: (context, index) {
-                return SmallPropertyImage(_images[index]);
+                return SmallPropertyImage(property.images[index]);
               },
             ),
           ),
@@ -66,7 +55,7 @@ class GalleryLayout extends StatelessWidget {
               MyText.h3("Video"),
               const SizedBox(width: 8),
               MyText.caption(
-                "(3 Videos)",
+                "(${property.images.length} Videos)",
                 color: secondary,
               ),
             ],
@@ -77,9 +66,9 @@ class GalleryLayout extends StatelessWidget {
             width: double.infinity,
             child: GridView.builder(
               gridDelegate: gridDelegate,
-              itemCount: _videos.length,
+              itemCount: property.images.length,
               itemBuilder: (context, index) {
-                return PropertyVideoThumbnail(_videos[index]);
+                return PropertyVideoThumbnail(property.images[index]);
               },
             ),
           ),

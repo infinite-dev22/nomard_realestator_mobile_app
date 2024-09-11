@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:real_estate_property/global/data/model/property_model.dart';
 
 import '../../bloc/property_card/property_card_bloc.dart';
 
 class PropertyCardImage extends StatelessWidget {
-  final String file;
+  final PropertyModel propertyModel;
   final double width;
   final double height;
   final double borderWidth;
@@ -15,7 +16,7 @@ class PropertyCardImage extends StatelessWidget {
   final Function()? onTap;
 
   const PropertyCardImage(
-    this.file, {
+    this.propertyModel, {
     super.key,
     this.width = 100,
     this.height = 100,
@@ -31,9 +32,12 @@ class PropertyCardImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<PropertyCardBloc, PropertyCardState>(
       listener: (blocContext, state) {
-        // TODO: implement listener
+        if (state.status.isInitial) {
+          blocContext.read<PropertyCardBloc>().add(LikeEvent(propertyModel.isFavorite));
+        }
       },
       builder: (blocContext, state) {
+        blocContext.read<PropertyCardBloc>().add(LikeEvent(propertyModel.isFavorite));
         return Stack(
           children: [
             GestureDetector(
@@ -48,7 +52,7 @@ class PropertyCardImage extends StatelessWidget {
                     topRight: Radius.circular(16),
                   ),
                   image: DecorationImage(
-                    image: AssetImage(file),
+                    image: AssetImage(propertyModel.images[0]),
                     fit: imageFit,
                   ),
                 ),
@@ -68,10 +72,10 @@ class PropertyCardImage extends StatelessWidget {
                       ),
                     ),
                     icon: Icon(
-                      (state.like == false)
+                      (state.like)
                           ? Icons.favorite
                           : Icons.favorite_border_outlined,
-                      color: (state.like == false)
+                      color: (state.like)
                           ? Colors.red
                           : Theme.of(context).colorScheme.primary,
                       size: 16,

@@ -40,8 +40,17 @@ class PropertyViewDetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    MyText.h2(propertyModel.name),
+                    SizedBox(
+                      width: constraints.maxWidth * .65,
+                      child: MyText.h2(
+                        propertyModel.name,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
                     const SizedBox(height: 4),
                     Row(
                       children: [

@@ -58,7 +58,10 @@ class ReviewCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 10),
-          MyText.regular(review.message),
+          MyText.regular(
+            review.message,
+            textAlign: TextAlign.start,
+          ),
           const SizedBox(height: 20),
           Row(
             children: [

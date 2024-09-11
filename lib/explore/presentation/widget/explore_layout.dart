@@ -1,35 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:real_estate_property/explore/data/repository/explore_data.dart';
 import 'package:real_estate_property/global/presentation/constants/app_colors.dart';
 import 'package:real_estate_property/global/presentation/widget/icon_holders/my_round_icon.dart';
 import 'package:real_estate_property/global/presentation/widget/property_card/my_property_card.dart';
 import 'package:real_estate_property/global/presentation/widget/text_fields/my_text_field.dart';
 import 'package:real_estate_property/global/presentation/widget/texts/my_text.dart';
 
-import '../../../global/data/model/property_model.dart';
-
 class ExploreLayout extends StatelessWidget {
   const ExploreLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var property = PropertyModel(
-      List<String>.of([
-        "assets/images/house_1.jpg",
-        "assets/images/house_1.jpg",
-        "assets/images/house_1.jpg",
-        "assets/images/house_1.jpg"
-      ]),
-      "name",
-      "type",
-      "location",
-      "month",
-      19000.0,
-      5.0,
-      true,
-    );
-
     var size = MediaQuery.of(context).size;
     return Stack(
       children: [
@@ -60,8 +43,8 @@ class ExploreLayout extends StatelessWidget {
         ),
         Positioned(
           top: 110,
-          left: 30,
-          right: 30,
+          left: 20,
+          right: 20,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -96,9 +79,9 @@ class ExploreLayout extends StatelessWidget {
           left: 30,
           right: 30,
           child: MyPropertyCard(
-            property,
-            height: 160,
-            onTap: () => GoRouter.of(context).pushNamed("property_view"),
+            exploreProperties[0],
+            height: 162,
+            onTap: () => GoRouter.of(context).pushNamed("property_view", queryParameters: {"index":"0", "type":"explore"}),
           ),
         ),
       ],

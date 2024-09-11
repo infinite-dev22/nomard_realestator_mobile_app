@@ -42,76 +42,90 @@ class PropertyCardDetails extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 8),
-            MyText.bold(propertyModel.name),
+            MyText.bold(
+              propertyModel.name,
+              overflow: TextOverflow.ellipsis,
+            ),
             const SizedBox(height: 8),
-            (large)
-                ? Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            if (large)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
                     children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.location_on_outlined,
-                            color: Theme.of(context).colorScheme.primary,
-                            size: 20,
-                          ),
-                          const SizedBox(width: 4),
-                          MyText.regular(
-                            propertyModel.location,
-                            color: secondary,
-                          ),
-                        ],
+                      Icon(
+                        Icons.location_on_outlined,
+                        color: Theme.of(context).colorScheme.primary,
+                        size: 20,
                       ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: [
-                          MyText.regular(
-                            "\$${propertyModel.price}",
-                            color: Theme.of(context).colorScheme.primary,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          const SizedBox(width: 4),
-                          MyText.regular(
-                            "/${propertyModel.leaseType}",
-                            color: secondary,
-                          ),
-                        ],
+                      const SizedBox(width: 4),
+                      MyText.regular(
+                        propertyModel.location,
+                        color: secondary,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
-                  )
-                : Column(
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
                     children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.location_on_outlined,
-                            color: Theme.of(context).colorScheme.primary,
-                            size: 20,
-                          ),
-                          const SizedBox(width: 4),
-                          MyText.regular(
-                            propertyModel.location,
-                            color: secondary,
-                          ),
-                        ],
+                      MyText.regular(
+                        "\$${propertyModel.price}",
+                        color: Theme.of(context).colorScheme.primary,
+                        fontWeight: FontWeight.bold,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: [
-                          MyText.regular(
-                            "\$${propertyModel.price}",
-                            color: Theme.of(context).colorScheme.primary,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          const SizedBox(width: 4),
-                          MyText.regular(
-                            "/${propertyModel.leaseType}",
-                            color: secondary,
-                          ),
-                        ],
+                      const SizedBox(width: 4),
+                      MyText.regular(
+                        "/${propertyModel.leaseType}",
+                        color: secondary,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
-                  )
+                  ),
+                ],
+              )
+            else
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.location_on_outlined,
+                        color: Theme.of(context).colorScheme.primary,
+                        size: 20,
+                      ),
+                      const SizedBox(width: 4),
+                      SizedBox(
+                        width: constraints.maxWidth * .7,
+                        child: MyText.regular(
+                          propertyModel.location,
+                          color: secondary,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.start,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
+                    children: [
+                      MyText.regular(
+                        "\$${propertyModel.price}",
+                        color: Theme.of(context).colorScheme.primary,
+                        fontWeight: FontWeight.bold,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      const SizedBox(width: 4),
+                      MyText.regular(
+                        "/${propertyModel.leaseType}",
+                        color: secondary,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
           ],
         ),
       );

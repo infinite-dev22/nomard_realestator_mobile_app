@@ -23,7 +23,7 @@ class MyNotificationButton extends StatelessWidget {
           elevation: 8,
           child: Badge(
             label: MyText.caption(
-              "5",
+              "4",
               color: Colors.white,
             ),
             backgroundColor: Theme.of(context).colorScheme.primary,

@@ -15,7 +15,7 @@ class ProfileLayout extends StatelessWidget {
       Column(
         children: [
           const UserProfileImage(
-            "assets/images/house_1.jpg",
+            "assets/images/profile.jpg",
             size: 130,
           ),
           MyText.h3("Jonathan Mark Mwigo"),
