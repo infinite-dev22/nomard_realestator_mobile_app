@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 
 part 'filter_chip_event.dart';
-part 'filter_slider_state.dart';
+part 'filter_chip_state.dart';
 
 class FilterChipBloc extends Bloc<FilterChipEvent, FilterChipState> {
   FilterChipBloc() : super(const FilterChipState()) {

@@ -1,4 +1,4 @@
-part of 'filter_slider_bloc.dart';
+part of 'filter_chip_bloc.dart';
 
 enum FilterChipStatus {
   initial,

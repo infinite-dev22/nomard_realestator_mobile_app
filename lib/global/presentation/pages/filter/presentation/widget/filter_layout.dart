@@ -88,6 +88,7 @@ class FilterLayout extends StatelessWidget {
                 min: 0,
                 max: 1000000,
                 values: RangeValues(state.startRange, state.endRange),
+                labels: RangeLabels(state.startRange.round().toString(), state.endRange.round().toString()),
                 onChanged: (RangeValues value) => context
                     .read<FilterSliderBloc>()
                     .add(ChangeRangeEvent(value.start, value.end)),
