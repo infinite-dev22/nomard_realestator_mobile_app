@@ -32,7 +32,7 @@ class MyAbstractButton extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         color: outlined
-            ? Colors.transparent
+            ? secondaryLight
             : disabled
                 ? secondary
                 : Theme.of(context).colorScheme.primary,
@@ -40,7 +40,7 @@ class MyAbstractButton extends StatelessWidget {
             ? Border.all(
                 color: disabled
                     ? secondary
-                    : Theme.of(context).colorScheme.primary,
+                    : secondaryLight  /*Theme.of(context).colorScheme.primary*/,
                 width: 1,
               )
             : null,
@@ -77,7 +77,7 @@ class MyAbstractButton extends StatelessWidget {
                   color: outlined
                       ? disabled
                           ? secondary
-                          : Theme.of(context).colorScheme.primary
+                          : secondaryDark  /*Theme.of(context).colorScheme.primary*/
                       : Colors.white,
                 ),
     );
